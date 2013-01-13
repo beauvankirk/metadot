@@ -4,7 +4,7 @@ Metadot: a dotfile management system
 Instalation
 -----------
 
-    git clone git://URL/dotfiles.git .dotfiles
+    git clone --recursive git://URL/dotfiles.git .dotfiles
 
 Some configuration files depends on the "scripts" repository to
 be cloned at ~/apps/scripts.
