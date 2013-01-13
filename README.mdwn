@@ -7,9 +7,9 @@ Instalation
     git clone git://URL/dotfiles.git .dotfiles
 
 Some configuration files depends on the "scripts" repository to
-be cloned at ~/apps/scripts
+be cloned at ~/apps/scripts.
 
-Backups of your old files can be put into .config/metadot/backups/
+Backups of your old files can be put into .dotfiles/backups.
 
 Layout
 ------
