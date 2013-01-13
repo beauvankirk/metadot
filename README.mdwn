@@ -22,7 +22,7 @@ Layout
 Todo
 ----
 
-- Metadot application to easy symlink and module management.
+- Metadot application to ease symlink and module management.
 - Put modules as git submodules.
 - Standardize module layout.
 - Better integration with scripts project.
