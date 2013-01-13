@@ -1,0 +1,18 @@
+" GVIM Configuration
+set background=light
+set mouse=a
+
+" GVIM IDE Configuration
+set nocompatible " must be the first line
+filetype on
+filetype indent on
+filetype plugin on
+set laststatus=2
+set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
+set nu
+
+" Change to the current file's folder
+map <leader>cd :cd %:p:h>cr<
+
+" Font configuration
+set gfn=Monospace\ 8

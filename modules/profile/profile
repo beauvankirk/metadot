@@ -1,0 +1,33 @@
+#
+# .profile: basic environment setup
+#
+
+# Set language
+export LANG=pt_BR.UTF-8
+
+# Source functions and variables from other places
+if [ -e "$HOME/.aliases" ]; then
+  source $HOME/.aliases
+fi
+
+# Funcoes ZZ
+if [ -e "/usr/bin/funcoeszz" ]; then
+  source /usr/bin/funcoeszz
+fi
+
+# Set PATH
+export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/apps/scripts
+
+# Editor variables, avoiding "Avoiding protocol specified" error
+export EDITOR="vim -X"
+
+# SSH Agent
+source $HOME/apps/scripts/ssh-agent-eval
+
+# GPG Agent
+source $HOME/apps/scripts/gpg-agent-eval
+
+# Custom configuration
+if [ -e "$HOME/.custom/profile" ]; then
+  source $HOME/.custom/profile
+fi

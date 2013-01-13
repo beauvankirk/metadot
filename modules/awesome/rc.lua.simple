@@ -1,0 +1,13 @@
+-- Environment variables
+homedir   = os.getenv("HOME")
+configdir = homedir .. "/.config/awesome"
+
+-- Include default distro configuration
+dofile("/etc/xdg/awesome/rc.lua")
+dofile(configdir .. "/keys.lua")
+
+-- Custom changes
+terminal = "terminal"
+
+-- Background
+awful.util.spawn_with_shell("sleep 1 && awsetbg " .. homedir .. "/themes/backgrounds/background.jpg")

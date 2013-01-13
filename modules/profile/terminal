@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# .terminal: sets default behaviour for a X11 console
+#
+
+# Load ANSI Art
+#cat $HOME/themes/ans/slack.ans
+
+# Make sure to load the profile
+source $HOME/.profile
+
+# Default window title
+TITLE="terminal"
+
+# export PS1="\[\033[1;32m\]\332\304\[\033[0;32m\]\304(\[\033[0;32m\]\$(w | head -n 1) \[\033[0;32m\])\304\304( \[\033[0;36m\]\u\[\033[1;36m\]@\[\033[0;36m\]\h\[\033[0;32m\] )\304\304( \[\033[0;33m\]\w\[\033[0;32m\] )\n\[\033[1;32m\]\300\304\[\033[0;32m\]\304( \[\033[1;32m\]\\$\[\033[0;32m\] >\[\033[00m\] "
+
+# export PS1="\[\033[1;33m\]\332\304\[\033[0;33m\]\304(\[\033[0;32m\]\$(w | head -n 1) \[\033[0;33m\])\304\304( \[\033[0;36m\]\u\[\033[1;36m\]@\[\033[0;36m\]\h\[\033[0;33m\] )\304\304( \[\033[0;32m\]\w\[\033[0;33m\] )\n\[\033[1;33m\]\300\304\[\033[0;33m\]\304( \[\033[1;33m\]\\$\[\033[0;33m\] >\[\033[00m\] "
+
+# export PS1="\[\033[1;33m\]\332\304\[\033[0;33m\]\304(\[\033[0;33m\]\$(w | head -n 1) \[\033[0;33m\])\304\304( \[\033[0;36m\]\u\[\033[1;36m\]@\[\033[0;36m\]\h\[\033[0;33m\] )\304\304( \[\033[0;32m\]\w\[\033[0;33m\] )\n\[\033[1;33m\]\300\304\[\033[0;33m\]\304( \[\033[1;33m\]\\$\[\033[0;33m\] >\[\033[00m\] "
+
+#export PS1="\[\033[1;33m\]\332\304\[\033[0;33m\]\304(\[\033[0;33m\] $( date +%H:%M:%S ) \[\033[0;33m\])\304\304( \[\033[0;36m\]\u\[\033[1;36m\]@\[\033[0;36m\]\h\[\033[0;33m\] )\304\304( \[\033[0;32m\]\w\[\033[0;33m\] )\n\[\033[1;33m\]\300\304\[\033[0;33m\]\304( \[\033[1;33m\]\\$\[\033[0;33m\] >\[\033[00m\] "
+
+# Set window title, standard version
+#trap 'echo -ne "\e]0;terminal: ${TITLE:-$BASH_COMMAND}\007"' DEBUG
+#trap 'xtitle ${TITLE:-$BASH_COMMAND}' DEBUG
+
+# Set window title, special version
+#
+# In the standard version, $_ stops to keep the parameter of the last command.
+# The sollution is to save the value of $_ and issue a pointless command with
+# it after changing the title so $_ retain it's intended value.
+#
+#trap 'last="$_" ; echo -ne "\e]0;terminal: ${TITLE:-$BASH_COMMAND}\007"; true $last' DEBUG
+#trap 'last="$_" ; xtitle ${TITLE:-$BASH_COMMAND}; true $last' DEBUG
+trap '_last="$_" ; _command=${BASH_COMMAND#command_prompt} ; xtitle ${_command:-$TITLE}; true $_last' DEBUG
+
+# Fortune :)
+#fortune

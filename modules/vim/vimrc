@@ -1,0 +1,61 @@
+syn on
+set nonu
+
+set background=dark
+set nobackup
+set nowritebackup
+
+set noautoindent
+"set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab 
+set mouse-=a
+set autoread
+set nocompatible
+
+set title
+set titleold="terminal"
+set titlestring=vim:\ %F
+
+" Folding
+set foldmethod=syntax
+let php_folding = 1
+let g:sh_fold_enabled = 1
+
+" PHP
+let php_sql_query = 1
+
+au BufNewFile,BufRead *.thtml setfiletype php
+au BufNewFile,BufRead *.mdwn set ft=ikiwiki
+au BufNewFile,BufRead *.rem set ft=remind
+
+augroup mkd
+ autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
+if has("autocmd")
+  " Drupal *.module and *.install files.
+  augroup module
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.module  set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test    set filetype=php
+  augroup END
+endif
+
+" Pathogen - https://github.com/tpope/vim-pathogen
+call pathogen#infect()
+
+" NERDTree section
+" Thanks to http://stackoverflow.com/questions/1447334/how-do-you-add-nerdtree-to-your-vimrc
+
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
+
+function OpenNERDTree()
+  execute ":NERDTree"
+  endfunction
+  command -nargs=0 OpenNERDTree :call OpenNERDTree()
+
+  nmap <ESC>t :OpenNERDTree<CR>
