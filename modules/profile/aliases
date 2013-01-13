@@ -11,7 +11,3 @@ alias vi="vim -X"
 
 # Development
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
-
-# Homecrypt aliases
-#alias logout="cd /home ; sudo /usr/bin/homecrypt off `whoami`; logout"
-#alias exit="cd /home ; sudo /usr/bin/homecrypt off `whoami`; exit"
