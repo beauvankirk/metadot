@@ -19,6 +19,7 @@ source "~/.mutt/colors"
 # General mutt options
 # --------------------
 # reset all
+set tmpdir = "~/temp/mutt/misc"
 set reply_to = ask-yes
 set reverse_name = yes
 set reverse_realname = yes
