@@ -21,6 +21,9 @@ export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/apps/scripts
 # Editor variables, avoiding "Avoiding protocol specified" error
 export EDITOR="vim -X"
 
+# Dir colors
+eval "`dircolors -b ~/.dircolorsrc`"
+
 # SSH Agent
 source $HOME/apps/scripts/ssh-agent-eval
 
