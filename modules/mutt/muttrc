@@ -1,0 +1,440 @@
+#
+#      ££     file : muttrc
+#   __,ττ       by : rhatto at riseup.net
+#    \\,_O
+#    /~  
+#
+
+#---------------------
+# Custom configuration
+#---------------------
+source "~/.custom/muttrc"
+
+# -----------
+# Color setup
+# -----------
+source "~/.mutt/colors"
+
+# --------------------
+# General mutt options
+# --------------------
+# reset all
+set reply_to = ask-yes
+set reverse_name = yes
+set reverse_realname = yes
+set gecos_mask = "^[^,]*"
+set hidden_host = no
+set hostname = "localhost"
+#set wait_key = yes
+#set weed = yes
+#set status_on_top = no
+#set suspend = yes
+#set timeout = 600
+set beep = no
+set user_agent = no
+#set delete_untag = yes
+#set prompt_after = yes
+set quit = yes
+set read_inc = 10
+set mail_check = 120
+set menu_scroll = no
+#set meta_key = no
+set help = yes
+#set history = 10
+#set read_only = no
+#set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
+set delete = yes
+#set dotlock_program = "/usr/local/bin/mutt_dotlock"
+#set beep_new = no
+#set charset = "iso-8859-1"
+set charset = "utf-8"
+#set check_new = yes
+
+# ----------------------
+# OS Specifiques options
+# ----------------------
+#set print = ask-no
+#set print_command = "lpr"
+#set print_decode = yes
+#set ispell = "ispell"
+set ispell="aspell -e -c --lang=pt_BR"
+#set locale = "C"
+#set shell = ""
+set spoolfile = "~/mail/INBOX"
+
+# ----------
+# Menu index
+# ----------
+#set wrap_search = yes
+set thorough_search=yes
+#set sort_re = yes
+#set status_chars = "-*%A"
+set status_format = "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? Novas:%n?%?o? Velhas:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
+set strict_threads = yes
+#set thorough_search = no
+#set to_chars = " +TCF"
+#set simple_search = "~f %s | ~s %s"
+set sort = threads
+set sort_aux = date-received
+#set sort_aux = date-sent
+#set resolve = yes
+#set index_format = "%4C %Z %{%b %d} %-15.15L (%4l) %s"
+#set mark_old = yes
+#set allow_8bit = yes
+#set arrow_cursor = no
+#set ascii_chars = no
+#set auto_tag = no
+#set collapse_unread = yes
+#set uncollapse_jump = no
+
+# --------------
+# Internal Pager
+# --------------
+set visual = ""
+set sig_dashes = yes
+set smart_wrap = yes
+set smileys = "(>From )|(:[-^]?[][)(><}{|/DP])"
+set quote_regexp = "^([ \t]*[|>:}#])+"
+set pager = "builtin"
+set pager_context = 0
+set pager_format = "-%Z- %C/%m: %-20.20n   %s"
+set pager_index_lines = 0
+set pager_stop = no
+set pager_index_lines=8
+set markers = no
+set escape = "~"
+set tilde = no
+
+# ---------
+# Composing
+# ---------
+set editor = "vim -X"
+#set use_domain = yes
+#set postpone = ask-yes
+set postponed = "~/tmp/mutt/postponed"
+#set query_command = ""
+#set recall = ask-yes
+#set fast_reply = no
+#set abort_nosubject = ask-yes
+#set abort_unmodified = yes
+#set askbcc = yes
+#set askcc = yes
+
+# --------
+# Replying
+# --------
+set attribution = "Em %d, %n escreveu:"
+#set post_indent_string = ""
+#set reply_regexp = "^(re([\\[0-9\\]+])*|aw):[ \t]*"
+#set reply_self = no
+#set indent_string = "> "
+#set in_reply_to = "%i; from %a on %{!%a, %b %d, %Y at %I:%M:%S%p %Z}"
+#set honor_followup_to = yes
+#set ignore_list_reply_to = no
+#set include = ask-yes
+#set bounce_delivered = yes
+
+# ----------
+# Forwarding
+# ----------
+#set forward_decrypt = yes
+#set forward_decode = yes
+#set forward_quote = no
+#set forward_format = "[%a: %s]"
+set forward_format = "Fwd: %s"
+
+# ------------------
+# Folder and Mailbox
+# ------------------
+set folder = "~/mail"
+set record="mail/INBOX.Sent"
+set move = no
+#set write_inc = 10
+#set sort_browser = alpha
+#set pipe_split = no
+#set pipe_decode = no
+#set pipe_sep = "\n"
+#set mask = "!^\\.[^.]"
+#set mbox = "~/mbox"
+#set mbox_type = mbox
+#set mh_purge = no
+#set confirmappend = yes
+#set confirmcreate = yes
+#set copy = yes
+#set default_hook = "~f %s !~P | (~P ~C %s)"
+#set fcc_attach = yes
+#set fcc_clear = no
+#set folder_format = "%2C %t %N %F %2l %-8.8u %-8.8g %8s %d %f"
+#set force_name = no
+#set mbox_pane_width="20"
+#set mbox_pane_show="no"
+#macro index \cA set mbox_pane_show="yes"
+#macro pager \cA set mbox_pane_show="yes"
+#macro index \cA set mbox_pane_show="no"
+#macro pager \cA set mbox_pane_show="no"
+#bind index <delete> next-mbox
+#bind pager <delete> next-mbox
+#bind index <insert> previous-mbox
+#bind pager <insert> previous-mbox
+#bind index X open-mbox
+#bind pager X open-mbox
+
+# -------
+# Headers
+# -------
+#set hdrs = yes
+#set header = no
+#set edit_headers = no
+#set autoedit = no
+
+# -------
+# Sending
+# -------
+set use_from = yes
+set save_address = yes
+set envelope_from = yes 
+#set write_bcc = yes
+#set save_empty = yes
+#set save_name = no
+#set send_charset = ""
+#set mix_entry_format = "%4n %c %-16s %a"
+#set metoo = no
+#set encode_from = no
+#use_envelope_from=yes
+#set followup_to = yes
+
+# -----
+# Alias
+# -----
+set alias_file = "~/.custom/mutt/aliases"
+source "~/.custom/mutt/aliases"
+#set sort_alias = alias
+#set reverse_alias = no
+#set alias_format = "%4n %t %-10a   %r"
+
+# ------------------
+# Attached documents
+# ------------------
+set attach_format = "%u%D%I %t%4n %T%.40d%> [%.7m/%.10M, %.6e%?C?, %C?, %s] "
+set attach_sep = "\n"
+set attach_split = yes
+
+# ----
+# MIME
+# ----
+set rfc2047_parameters = no
+set mime_forward_rest = yes
+set message_format = "%s"
+set mailcap_path = ".mailcap"
+set mailcap_sanitize = yes
+set mime_forward = no
+set mime_forward_decode = no
+set implicit_autoview = no
+
+# ----
+# IMAP
+# ----
+#set imap_checkinterval = 60
+#set imap_list_subscribed = no
+#set imap_user = user
+#set imap_cramkey = ""
+#set imap_pass = nada 
+#set imap_passive = yes
+#set imap_servernoise = yes
+#set imap_home_namespace = ""
+#set imap_preconnect = ""
+#account-hook . 'unset imap_user; unset imap_pass; unset tunnel'
+#account-hook imap://mail.example.og/ 'set imap_user=user imap_pass=lalala'
+
+# ---
+# SSL
+# ---
+#set entropy_file = ""
+#set ssl_usesystemcerts = yes
+#set ssl_use_sslv3 = yes
+#set ssl_use_tlsv1 = yes
+#set imap_force_ssl = no
+
+# -------
+# Scoring
+# -------
+#set score = yes
+#set score_threshold_delete = -1
+#set score_threshold_flag = 9999
+#set score_threshold_read = -1
+
+# --------
+# Sendmail
+# --------
+set use_8bitmime = no
+set sendmail = "/usr/bin/msmtp"
+#set sendmail = "/usr/sbin/sendmail -oem -oi"
+#set sendmail_wait = 2 
+#set dsn_notify = ""
+#set dsn_return = ""
+
+# ---
+# GPG
+# ---
+macro index S ":toggle pgp_verify_sig\n"        # define S to toggle sig check
+macro index A ":toggle pgp_autosign\n"          # define A to toggle autosign
+set pgp_verify_sig=yes
+set pgp_autosign
+
+# --------------
+# GnuPG commands
+# --------------
+set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
+set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
+set pgp_decrypt_command="gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
+set pgp_sign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --digest-algo sha256 --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --digest-algo sha256 --textmode --clearsign %?a?-u %a? %f"set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg -v --batch --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg --passphrase-fd 0 -v --batch --output - --digest-algo sha256 --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_import_command="gpg --no-verbose --import -v %f"
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r"
+set pgp_getkeys_command=""
+set pgp_good_sign="^gpg: Assinatura correta de"
+
+# ---------------------------
+# Patch: pgp-menu-traditional
+# ---------------------------
+# * introduce pgp_replyinline boolean (default no)
+#   When set, this option will (attempt) to reply to
+#   inline (traditional) messages as inline (traditional).
+# * introduce pgp_autoinline boolean (default no)
+#   When set, this option will (attempt) to send messages as inline (traditional).
+# * change pgp_create_traditional to a synonym for pgp_autoinline
+#   Warning: this changes pgp_create_traditional from a quad variable to a boolean.
+# * introduce pgp_mime_ask quad option (default no)
+
+# --------------------------
+# Patch: multiple-crypt-hook
+# --------------------------
+# Allows multiple key-ids for the same pattern With this patch, you can have
+# multiple crypt-hook instances with the same pattern (recipient). This allows
+# one to specify multiple key-ids for a particular pattern (recipient). 
+
+# -------------------------
+# Patch: confirm-crypt-hook
+# -------------------------
+# This patch adds the variable crypt_confirmhook (default yes),
+# to allow you to skip the "Use keyID" prompt, which is frustrating
+# for so many people. Typical (for me) use of crypt-hook implies
+# selection of a known key (assuming no typos), so crypt_confirmhook
+# can be unset if you know your crypt-hooks are valid; you won't be
+# prompted for confirmation anymore. You should verify all your
+# crypt-hooks are correct before unsetting this variable.
+#
+# set crypt_confirmhook = no
+# pgp-hook mailing@lists.org listname
+# pgp-hook mailing@lists.org KEYID_1
+# pgp-hook mailing@lists.org KEYID_2
+#
+
+# ---------
+# Mailboxes
+# ---------
+mailboxes `echo $HOME/mail/*`
+mailboxes `echo $HOME/mail/Sync/*/*`
+
+# --------------
+# Mail reception
+# --------------
+#macro pager <esc>f "!clear;offlineimap;fetchmail;philter.sh\n" "Sync remote with local mail"
+#macro index <esc>f "!clear;offlineimap;fetchmail;philter.sh\n" "Sync remote with local mail"
+#macro pager <esc>f "!clear;fetchmail -v;philter.sh\n" "Sync remote with local mail"
+#macro index <esc>f "!clear;fetchmail -v;philter.sh\n" "Sync remote with local mail"
+macro pager <esc>f "!clear;fetchmail;philter.sh\n" "Sync remote with local mail"
+macro index <esc>f "!clear;fetchmail;philter.sh\n" "Sync remote with local mail"
+
+# -------------
+# Ignore fields
+# -------------
+ignore X
+ignore Delivered-To
+ignore Precedence
+ignore List
+ignore Errors-To
+ignore In-Reply-To
+ignore Importance
+ignore Mail-Followup-To
+ignore Organization
+ignore Thread
+ignore ReSent
+ignore Disposition
+ignore Return
+ignore RT
+ignore Priority
+ignore DomainKey-Signature
+ignore Message
+ignore MIME
+ignore Received
+ignore References
+ignore Content
+ignore DKIM-Signature
+unignore X-Mailer
+unignore User-Agent
+
+# ---------
+# Auto view
+# ---------
+auto_view text/html
+auto_view application/msword
+auto_view text/richtext
+auto_view image/*
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+# ------
+# Mairix
+# ------
+macro index \es "<shell-escape>mairix " "Run a Mairix search"
+macro index \em "<change-folder-readonly>=INBOX.Search/\n" "Switch to Mairix virtual folder"
+
+# ----------------------------------------------------------------------------------------
+# Notmuch
+# For info look at http://upsilon.cc/~zack/blog/posts/2011/01/how_to_use_Notmuch_with_Mutt
+# ----------------------------------------------------------------------------------------
+macro browser <F8> "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch --prompt search\
+  <enter><change-dir>../.cache/<enter><search>mutt_results<enter><enter>" "search mail (using notmuch)"
+
+macro index <F7> "<tag-prefix><pipe-message>~/apps/scripts/mutt-notmuch-tag<enter>" "Tag messages (using notmuch)"
+
+# ----------
+# Bogofilter
+# ----------
+macro index s "<enter-command>unset wait_key\n<tag-prefix><pipe-entry>bogofilter -MSn\n<enter-command>set wait_key\n<tag-prefix><save-entry>"
+macro pager s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -MSn\n<enter-command>set wait_key\n<save-entry>"
+macro index r "<enter-command>unset wait_key\n<tag-prefix><pipe-entry>bogofilter -Mn\n<enter-command>set wait_key\n<tag-prefix><reply>"
+macro pager r "<enter-command>unset wait_key\n<pipe-entry>bogofilter -Mn\n<enter-command>set wait_key\n<reply>"
+macro index g "<enter-command>unset wait_key\n<tag-prefix><pipe-entry>bogofilter -Mn\n<enter-command>set wait_key\n<tag-prefix><group-reply>"
+macro pager g "<enter-command>unset wait_key\n<pipe-entry>bogofilter -Mn\n<enter-command>set wait_key\n<group-reply>"
+macro index l "<enter-command>unset wait_key\n<tag-prefix><pipe-entry>bogofilter -Mn\n<enter-command>set wait_key\n<tag-prefix><list-reply>"
+macro pager l "<enter-command>unset wait_key\n<pipe-entry>bogofilter -Mn\n<enter-command>set wait_key\n<list-reply>"
+macro index X "<enter-command>unset wait_key\n<tag-prefix><pipe-entry>bogofilter -MNs\n<enter-command>set wait_key\n<tag-prefix><delete-message>"
+macro pager X "<enter-command>unset wait_key\n<pipe-entry>bogofilter -MNs\n<enter-command>set wait_key\n<delete-message>"
+
+# Schleuder config
+# see http://schleuder2.nadir.org/contrib/schleuder-with-mutt.html
+color body red default "^From: .*"
+color body red default "^To: .*"
+color body red default "^Cc: .*"
+color body red default "^Date: .*"
+color body brightred default "^Enc: unenc.*"
+color body red default "^Enc: enc.*"
+color body brightred default "^Sig: [^G]?.*"
+color body red default "^Sig: Good signature.*"
+color body red default "^Resent-to: .*"
+color body brightred default "^Note: .*"
+
+# Macro for jumping to the next important message
+macro index,pager \' "<search>~F<enter>" "Jump to next important message"
+
+# Sidebar
+source "~/.mutt/sidebar"
+
+# http://wiki.mutt.org/?MuttFaq/Attachment
+macro attach W <save-entry><kill-line>~/download/
+macro attach E <save-entry><kill-line>~/download/<enter>

@@ -14,8 +14,10 @@ Backups of your old files can be put into .config/metadot/backups/
 Layout
 ------
 
-- modules: where all dotfiles plugins are stored
-- backups: backups of old config files
+- ~/.dotfiles/
+  - modules: where all dotfiles plugins are stored
+  - backups: backups of old config files
+- ~/.custom: your custom configuration where you can override parameters
 
 Todo
 ----

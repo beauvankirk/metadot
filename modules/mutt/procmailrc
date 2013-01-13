@@ -1,0 +1,29 @@
+#
+# Procmail rules
+#
+
+MAILDIR=$HOME/mail
+LOGFILE=$HOME/.procmaillog
+LOGABSTRACT=no
+VERBOSE=off
+FORMAIL=/usr/bin/formail
+NL="
+"
+##recipe lines begin with :0
+##dont put comments on recipe lines
+##disable a recipe with the false condition !
+##condition lines begin with * and regex is your friend
+##conditions are anded and everything after * is fed straight into egrep
+##one action line follows the conditions, in this case it is a mailbox name
+
+################################
+# Last rule: mail that gets    #
+# this far goes in default box #
+################################
+:0:
+* ^X-Spam-Flag: YES
+INBOX.Trash/new
+
+:0
+* .*
+INBOX/new
