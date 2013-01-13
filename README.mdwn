@@ -1,5 +1,5 @@
-Metadot: a dotfiles management system
-=====================================
+Metadot: a dotfile management system
+====================================
 
 Instalation
 -----------
