@@ -16,3 +16,12 @@ Layout
 
 - modules: where all dotfiles plugins are stored
 - backups: backups of old config files
+
+Todo
+----
+
+- Metadot application to easy symlink and module management.
+- Put modules as git submodules.
+- Standardize module layout.
+- Better integration with scripts project.
+- Grab ideas from other projects.
