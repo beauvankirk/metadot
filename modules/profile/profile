@@ -30,6 +30,11 @@ source $HOME/apps/scripts/ssh-agent-eval
 # GPG Agent
 source $HOME/apps/scripts/gpg-agent-eval
 
+# Remove lost found folder if empty
+if [ -d "$HOME/lost+found" ]; then
+  rmdir $HOME/lost+found &> /dev/null
+fi
+
 # Custom configuration
 if [ -e "$HOME/.custom/profile" ]; then
   source $HOME/.custom/profile

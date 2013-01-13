@@ -436,5 +436,5 @@ macro index,pager \' "<search>~F<enter>" "Jump to next important message"
 source "~/.mutt/sidebar"
 
 # http://wiki.mutt.org/?MuttFaq/Attachment
-macro attach W <save-entry><kill-line>~/download/
-macro attach E <save-entry><kill-line>~/download/<enter>
+macro attach W <save-entry><kill-line>~/load/
+macro attach E <save-entry><kill-line>~/load/<enter>
