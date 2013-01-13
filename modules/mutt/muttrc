@@ -390,8 +390,8 @@ macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
 # ------
 # Mairix
 # ------
-macro index \es "<shell-escape>mairix " "Run a Mairix search"
-macro index \em "<change-folder-readonly>=INBOX.Search/\n" "Switch to Mairix virtual folder"
+#macro index \es "<shell-escape>mairix " "Run a Mairix search"
+#macro index \em "<change-folder-readonly>=INBOX.Search/\n" "Switch to Mairix virtual folder"
 
 # ----------------------------------------------------------------------------------------
 # Notmuch
