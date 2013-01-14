@@ -1,6 +1,6 @@
 # Generic aliases
 alias ls="ls --color=auto"
-alias ll="ls -l"
+alias ll="ls --color=auto -l"
 alias kedpmc="kedpm -c"
 alias gvim="vim.gtk -g &> /dev/null"
 alias drush="php -d error_reporting=E_ALL^E_NOTICE `which drush`"
