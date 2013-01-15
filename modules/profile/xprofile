@@ -38,3 +38,8 @@ fi
 for program in $PROGRAMS; do
   $program &
 done
+
+# See https://bugzilla.redhat.com/show_bug.cgi?id=783568
+#     https://bugs.launchpad.net/ubuntu/+source/gnome-keyring/+bug/932177
+unset GNOME_KEYRING_PID
+unset GNOME_KEYRING_CONTROL
