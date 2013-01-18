@@ -25,10 +25,14 @@ export EDITOR="vim -X"
 eval "`dircolors -b ~/.dircolorsrc`"
 
 # SSH Agent
-source $HOME/apps/scripts/ssh-agent-eval
+if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
+  source $HOME/apps/scripts/ssh-agent-eval
+fi
 
 # GPG Agent
-source $HOME/apps/scripts/gpg-agent-eval
+if [ -e "$HOME/apps/scripts/gpg-agent-eval" ]; then
+  source $HOME/apps/scripts/gpg-agent-eval
+fi
 
 # Remove lost found folder if empty
 if [ -d "$HOME/lost+found" ]; then
