@@ -190,9 +190,30 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
+
+    --- Original tab behavior
+    ---awful.key({ modkey,           }, "Tab",
+    ---    function ()
+    ---        awful.client.focus.history.previous()
+    ---        if client.focus then
+    ---            client.focus:raise()
+    ---        end
+    ---    end),
+
+    --- Cyclic tab behavior
+    --- See http://stackoverflow.com/questions/11697102/awesome-alttab-just-switches-between-two-apps
+    awful.key({ modkey, "Shift"   }, "Tab",
+        function ()
+            -- awful.client.focus.history.previous()
+            awful.client.focus.byidx(-1)
+            if client.focus then
+                client.focus:raise()
+            end
+        end),
     awful.key({ modkey,           }, "Tab",
         function ()
-            awful.client.focus.history.previous()
+            -- awful.client.focus.history.previous()
+            awful.client.focus.byidx(1)
             if client.focus then
                 client.focus:raise()
             end
