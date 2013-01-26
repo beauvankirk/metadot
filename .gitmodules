@@ -1,3 +1,6 @@
 [submodule "modules/vim/vim/bundle/nerdtree"]
 	path = modules/vim/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "modules/xcompose/xcompose"]
+	path = modules/xcompose/xcompose
+	url = https://github.com/leoboiko/pointless-xcompose.git

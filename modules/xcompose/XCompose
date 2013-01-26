@@ -1,0 +1,28 @@
+#
+# See https://github.com/leoboiko/pointless-xcompose
+# Similar project: https://github.com/kragen/xcompose
+#
+
+# Default X compose mappings
+include "%L"
+
+# For dead keys
+include "%H/.dotfiles/modules/xcompose/xcompose/examples/dead.xcompose"
+
+# Brazilian mappings
+include "/usr/share/X11/locale/pt_BR.UTF-8/Compose"
+
+# Other xcompose mappings
+include "%H/.dotfiles/modules/xcompose/xcompose/abbrevs.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/arrows.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/bullets.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/cjk.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/dashes-hyphens.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/dingbats.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/enclosed.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/fractions.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/historical.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/hyphen-macron.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/invisible.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/math.xcompose"
+include "%H/.dotfiles/modules/xcompose/xcompose/typographic.xcompose"
