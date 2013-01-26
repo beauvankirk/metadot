@@ -4,3 +4,6 @@
 [submodule "modules/xcompose/xcompose"]
 	path = modules/xcompose/xcompose
 	url = https://github.com/leoboiko/pointless-xcompose.git
+[submodule "modules/vim/vim/bundle/syntastic"]
+	path = modules/vim/vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
