@@ -1,6 +1,8 @@
 #
 # See https://github.com/leoboiko/pointless-xcompose
 # Similar project: https://github.com/kragen/xcompose
+# See also http://my.opera.com/CrazyTerabyte/blog/2010/11/04/how-x11-xcompose-works
+#          https://wiki.archlinux.org/index.php/Accents_on_US_keyboards
 #
 
 # Default X compose mappings
