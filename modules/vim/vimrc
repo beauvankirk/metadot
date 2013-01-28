@@ -47,6 +47,9 @@ endif
 " Pathogen - https://github.com/tpope/vim-pathogen
 call pathogen#infect()
 
+" No modelines
+set nomodeline
+
 " NERDTree section
 " Thanks to http://stackoverflow.com/questions/1447334/how-do-you-add-nerdtree-to-your-vimrc
 
