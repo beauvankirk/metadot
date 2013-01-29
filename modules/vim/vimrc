@@ -50,6 +50,11 @@ call pathogen#infect()
 " No modelines
 set nomodeline
 
+" Syntax check
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
+
 " NERDTree section
 " Thanks to http://stackoverflow.com/questions/1447334/how-do-you-add-nerdtree-to-your-vimrc
 
