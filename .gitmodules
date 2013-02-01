@@ -7,3 +7,6 @@
 [submodule "modules/vim/vim.dot.link/bundle/syntastic"]
 	path = modules/vim/vim.dot.link/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "modules/scripts/apps/scripts.link"]
+	path = modules/scripts/apps/scripts.link
+	url = git://git.sarava.org/scripts.git
