@@ -59,6 +59,7 @@ Also,
 Todo
 ----
 
+- Check if module is correctly installed.
 - Track loaded modules.
 - Make modules as git submodules.
 - Module descriptions.
