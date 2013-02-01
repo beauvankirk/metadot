@@ -43,3 +43,8 @@ done
 #     https://bugs.launchpad.net/ubuntu/+source/gnome-keyring/+bug/932177
 unset GNOME_KEYRING_PID
 unset GNOME_KEYRING_CONTROL
+
+# Execute window manager
+if [ "`cut -d . -f 1 /etc/debian_version`" ]; then
+  awesome
+fi

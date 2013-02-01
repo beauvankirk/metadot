@@ -7,16 +7,16 @@ export LANG=pt_BR.UTF-8
 
 # Source functions and variables from other places
 if [ -e "$HOME/.aliases" ]; then
-  source $HOME/.aliases
+  . $HOME/.aliases
 fi
 
 # Funcoes ZZ
 if [ -e "/usr/bin/funcoeszz" ]; then
-  source /usr/bin/funcoeszz
+  . /usr/bin/funcoeszz
 fi
 
 # Set PATH
-export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/apps/scripts
+export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/.dotfiles:$HOME/apps/scripts
 
 # Editor variables, avoiding "Avoiding protocol specified" error
 export EDITOR="vim -X"
@@ -26,12 +26,12 @@ eval "`dircolors -b ~/.dircolorsrc`"
 
 # SSH Agent
 if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
-  source $HOME/apps/scripts/ssh-agent-eval
+  $HOME/apps/scripts/ssh-agent-eval
 fi
 
 # GPG Agent
 if [ -e "$HOME/apps/scripts/gpg-agent-eval" ]; then
-  source $HOME/apps/scripts/gpg-agent-eval
+  $HOME/apps/scripts/gpg-agent-eval
 fi
 
 # Remove lost found folder if empty
@@ -41,5 +41,5 @@ fi
 
 # Custom configuration
 if [ -e "$HOME/.custom/profile" ]; then
-  source $HOME/.custom/profile
+  . $HOME/.custom/profile
 fi
