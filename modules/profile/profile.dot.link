@@ -43,6 +43,21 @@ fi
 # Make sure basic folder structure exists
 mkdir -p $HOME/{apps,file,html,mail,temp}
 
+# Make sure data symlink exists
+if [ -e "/var/data" ] && [ ! -e "$HOME/data" ]; then
+  ln -s /var/data $HOME/data
+fi
+
+# Make sure code symlink exists
+if [ -e "/var/data/code" ] && [ ! -e "$HOME/code" ]; then
+  ln -s /var/data/code $HOME/code
+fi
+
+# Make sure download symlink exists
+if [ -e "/var/data/load" ] && [ ! -e "$HOME/load" ]; then
+  ln -s /var/data/load $HOME/load
+fi
+
 # Custom configuration
 if [ -e "$HOME/.custom/profile" ]; then
   . $HOME/.custom/profile
