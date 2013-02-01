@@ -41,7 +41,7 @@ if [ -d "$HOME/lost+found" ]; then
 fi
 
 # Make sure basic folder structure exists
-mkdir -p $HOME/{apps,file,html,mail,temp}
+mkdir -p $HOME/apps $HOME/file $HOME/html $HOME/mail $HOME/temp
 
 # Make sure data symlink exists
 if [ -e "/var/data" ] && [ ! -e "$HOME/data" ]; then
