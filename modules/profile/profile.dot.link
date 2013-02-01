@@ -62,3 +62,6 @@ fi
 if [ -e "$HOME/.custom/profile" ]; then
   . $HOME/.custom/profile
 fi
+
+# Make sure we start at home
+cd
