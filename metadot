@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# metadot: a dotfile manager
+# metadot: a dotfile management system
 #
 
 # Parameters
@@ -75,6 +75,8 @@ function metadot_load {
 if [ -z "$OPT" ]; then
   echo "usage: $BASENAME <option> [arguments]"
   exit 1
+elif [ "$OPT" == "ls" ]; then
+  ls -1 $MODULES
 elif [ "$OPT" == "update" ]; then
   ( cd $DOT && git pull origin master && git submodule update --init )
 elif [ "$OPT" == "load" ]; then

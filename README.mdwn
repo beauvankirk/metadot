@@ -6,12 +6,26 @@ Inspired by https://github.com/holman/dotfiles
 Instalation
 -----------
 
+Get the code:
+
     git clone --recursive git://URL/dotfiles.git .dotfiles
 
-Some configuration files depends on the "scripts" repository to
-be cloned at ~/apps/scripts.
+Then add .dotfiles folder to your path.
 
-Backups of your old files can be put into .dotfiles/backups.
+Usage
+-----
+
+List existing modules:
+
+    metadot ls
+
+Load a module:
+
+    metadot load <module>
+
+Load all modules:
+
+    metadot load --all
 
 Layout
 ------
@@ -41,5 +55,7 @@ Also,
 Todo
 ----
 
-- Put modules as git submodules.
+- Make modules as git submodules.
 - Better integration with scripts project.
+- Module descriptions.
+- Basic dependency.
