@@ -16,7 +16,8 @@ if [ -e "/usr/bin/funcoeszz" ]; then
 fi
 
 # Set PATH
-export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin:$HOME/.dotfiles:$HOME/apps/scripts
+PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
+export PATH=$PATH:$HOME/.dotfiles:$HOME/apps/scripts:$HOME/apps/brweather/brweather
 
 # Editor variables, avoiding "Avoiding protocol specified" error
 export EDITOR="vim -X"
