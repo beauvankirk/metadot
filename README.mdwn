@@ -59,6 +59,7 @@ Also,
 Todo
 ----
 
+- Track loaded modules.
 - Make modules as git submodules.
 - Module descriptions.
 - Module unloading and restoration.
