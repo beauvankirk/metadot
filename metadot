@@ -1,0 +1,86 @@
+#!/bin/bash
+#
+# metadot: a dotfile manager
+#
+
+# Parameters
+OPT="$1"
+DATE="`date +%Y%m%d%I%M%S`"
+BASENAME="`basename $0`"
+DOT="$HOME/.dotfiles"
+MODULES="$DOT/modules"
+BACKUPS="$HOME/.backups/$DATE"
+
+# Backup a file
+function metadot_backup {
+  local file="$HOME/$1"
+  
+  if [ -e "$file" ] || [ -h "$file" ]; then
+    local folder="$BACKUPS/`dirname $1`"
+
+    #echo "Backing up `basename $1`..."
+    mkdir -p $folder
+    mv $file $folder
+  fi
+}
+
+# Find contents of a module
+function metadot_find {
+  local module="$1"
+  ( cd $MODULES/$module && find -name '*.link' -or -name '*.dot.link' ) | sed -e 's|./||'
+}
+
+# Load a module
+function metadot_load {
+  local module="$1"
+  local destname
+  local dirname
+
+  if [ -d "$MODULES/$module" ]; then
+
+    echo "Loading module $module..."
+
+    for file in `metadot_find $module`; do
+      echo "Processing $file..."
+
+      # Get the dirname, replacing string.dot with .string
+      dirname="`echo $file | sed -e 's|\([^/]*\).dot/|.\1/|g'`"
+      dirname="`dirname $dirname`"
+
+      if echo $file | grep -q '.dot.link'; then
+        destname=".`basename $file .dot.link`"
+      else
+        destname="`basename $file .link`"
+      fi
+
+      if [ "$dirname" != "." ]; then
+        #echo "Creating $HOME/$dirname..."
+        mkdir -p $HOME/$dirname
+      else
+        dirname=""
+      fi
+
+      metadot_backup "$dirname/$destname"
+
+      #echo "Installing symlink $dirname/$destname..."
+      ln -s $MODULES/$module/$file $HOME/$dirname/$destname
+
+    done
+
+    echo "Backups saved at $BACKUPS."
+
+  else
+    echo "No such module $module"
+  fi
+}
+
+# Parsing.
+if [ -z "$OPT" ]; then
+  echo "usage: $BASENAME <option> [arguments]"
+  exit 1
+elif [ "$OPT" == "update" ]; then
+  ( cd $DOT && git pull origin master && git submodule update --init )
+elif [ "$OPT" == "load" ]; then
+  shift
+  metadot_load $*
+fi

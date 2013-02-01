@@ -1,6 +1,8 @@
 Metadot: a dotfile management system
 ====================================
 
+Inspired by https://github.com/holman/dotfiles
+
 Instalation
 -----------
 
@@ -14,10 +16,23 @@ Backups of your old files can be put into .dotfiles/backups.
 Layout
 ------
 
-- ~/.dotfiles/
-  - modules: where all dotfiles plugins are stored
-  - backups: backups of old config files
+- ~/.dotfiles: where all dotfiles plugins are stored
+- ~/.backups: backups of old config files
 - ~/.custom: your custom configuration where you can override parameters
+
+Module format
+-------------
+
+Modules rest at ~/.dotfiles/modules and can be git submodules. File format is:
+
+    [path/]<name>[.dot][.link]
+
+That means:
+
+- files ending with a .link extension are linked at $HOME.
+- files with a .dot.link extension are converted to a dotfile: vimrc.dot.link is symlinked as ~/.vimrc
+- file structure is preserved: file apps/scripts.link is linked at $HOME/apps/scripts.
+- all other files are ignored.
 
 Todo
 ----

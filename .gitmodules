@@ -1,9 +1,9 @@
-[submodule "modules/vim/vim/bundle/nerdtree"]
-	path = modules/vim/vim/bundle/nerdtree
+[submodule "modules/vim/vim.dot.link/bundle/nerdtree"]
+	path = modules/vim/vim.dot.link/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "modules/xcompose/xcompose"]
 	path = modules/xcompose/xcompose
 	url = https://github.com/leoboiko/pointless-xcompose.git
-[submodule "modules/vim/vim/bundle/syntastic"]
-	path = modules/vim/vim/bundle/syntastic
+[submodule "modules/vim/vim.dot.link/bundle/syntastic"]
+	path = modules/vim/vim.dot.link/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
