@@ -10,7 +10,11 @@ Get the code:
 
     git clone --recursive git://URL/dotfiles.git .dotfiles
 
-Then add .dotfiles folder to your path.
+Then add .dotfiles folder to your path or replace your dotfiles with
+
+    ~/.dotfiles/metadot load profile
+
+A backup will be saved.
 
 Usage
 -----
@@ -57,6 +61,6 @@ Todo
 
 - Make modules as git submodules.
 - Module descriptions.
-- Module unloading.
+- Module unloading and restoration.
 - Module dependency.
 - Integration with scripts project.
