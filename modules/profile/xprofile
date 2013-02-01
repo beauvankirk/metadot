@@ -10,14 +10,14 @@ BACKGROUND=""
 PROGRAMS=""
 
 # Make sure to load the profile
-source $HOME/.profile
+. $HOME/.profile
 
 # Start xscreensaver
 xscreensaver -no-splash &
 
 # Custom
 if [ -e "$HOME/.custom/xprofile" ]; then
-  source $HOME/.custom/xprofile
+  . $HOME/.custom/xprofile
 fi
 
 # Set background
