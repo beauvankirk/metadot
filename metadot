@@ -66,9 +66,6 @@ function metadot_load {
       ln -s $MODULES/$module/$file $HOME/$dirname/$destname
 
     done
-
-    echo "Backups saved at $BACKUPS."
-
   else
     echo "No such module $module"
   fi
@@ -82,5 +79,19 @@ elif [ "$OPT" == "update" ]; then
   ( cd $DOT && git pull origin master && git submodule update --init )
 elif [ "$OPT" == "load" ]; then
   shift
-  metadot_load $*
+
+  if [ -z "$1" ]; then
+    echo "usage: $BASENAME load [module(s)|--all]"
+  fi
+
+  if [ "$1" == "--all" ]; then
+    modules="`ls $MODULES`"
+  else
+    modules="$*"
+  fi
+
+  for module in $modules; do
+    metadot_load $module
+  done
+  echo "Backups saved at $BACKUPS."
 fi
