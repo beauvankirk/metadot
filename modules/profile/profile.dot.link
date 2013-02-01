@@ -40,6 +40,9 @@ if [ -d "$HOME/lost+found" ]; then
   rmdir $HOME/lost+found &> /dev/null
 fi
 
+# Make sure basic folder structure exists
+mkdir -p $HOME/{apps,file,html,mail,temp}
+
 # Custom configuration
 if [ -e "$HOME/.custom/profile" ]; then
   . $HOME/.custom/profile
