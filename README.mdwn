@@ -56,6 +56,7 @@ Todo
 ----
 
 - Make modules as git submodules.
-- Better integration with scripts project.
 - Module descriptions.
-- Basic dependency.
+- Module unloading.
+- Module dependency.
+- Integration with scripts project.
