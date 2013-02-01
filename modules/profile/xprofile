@@ -9,6 +9,9 @@ BACKGROUND=""
 # Session applications
 PROGRAMS=""
 
+# OS Version
+OSVERSION="`cut -d . -f 1 /etc/debian_version`"
+
 # Make sure to load the profile
 . $HOME/.profile
 
@@ -45,6 +48,6 @@ unset GNOME_KEYRING_PID
 unset GNOME_KEYRING_CONTROL
 
 # Execute window manager
-if [ "`cut -d . -f 1 /etc/debian_version`" ]; then
+if [ "$OSVERSION" == '7' ]; then
   awesome
 fi
