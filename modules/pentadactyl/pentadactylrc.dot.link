@@ -6,9 +6,6 @@ loadplugins '\.(js|penta)$'
 " User defined items
 group user
 
-" Links Saraventos
-command! -nargs=* -description='Add to Links Saraventos' link -javascript javascript:x=content.document;a=encodeURIComponent(x.location.href);t=encodeURIComponent(x.title);d=encodeURIComponent(x.getSelection());c=encodeURIComponent(args);commands.execute('tabopen https://links.sarava.org/bookmarks?action=add&address='+a+'&title='+t+'&description='+d+'&tags='+c);
-
 " Set title and default search
 set defsearch=duck
 set titlestring=Firefox
