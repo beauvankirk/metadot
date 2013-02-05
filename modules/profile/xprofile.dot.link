@@ -47,6 +47,11 @@ done
 unset GNOME_KEYRING_PID
 unset GNOME_KEYRING_CONTROL
 
+# Apply custom keyboard configuration
+if [ -f "$HOME/.Xmodmaps/$HOSTNAME" ]; then
+  xmodmap $HOME/.Xmodmaps/$HOSTNAME
+fi
+
 # Execute window manager
 if [ "$OSVERSION" == '7' ]; then
   awesome
