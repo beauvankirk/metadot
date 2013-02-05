@@ -63,7 +63,7 @@
 INCLUDE .remind/cookbook/
 
 # Custom calendars
-INCLUDE .remind/index.rem
+#INCLUDE .remind/index.rem
 
 # Calendar data imported from Sunbird
 #INCLUDE .remind/sunbidr
