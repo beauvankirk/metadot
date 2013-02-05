@@ -1,6 +1,2 @@
-# -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
-include "/home/rhatto/.themes/PrettyOkayish-Prion/gtk-2.0/gtkrc"
-
-include "/home/rhatto/.gtkrc-2.0.mine"
-
-# -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
+include ".themes/PrettyOkayish-Prion/gtk-2.0/gtkrc"
+include ".gtkrc-2.0.mine"
