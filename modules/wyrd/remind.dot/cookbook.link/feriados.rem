@@ -1,0 +1,79 @@
+#
+#
+#    FERIADOS
+#
+#
+
+#SET shade 94
+#REM Sat Sun PS [psshade(98)]
+
+#
+# feriados fixos nacionais
+#
+
+REM OMIT 1 Jan +4 MSG %"Primeiro do ano %" %b
+#REM 1 Jan  PS [psshade(shade)]
+
+REM OMIT 25 Dec +4 MSG %"Natal %" %b
+#REM 25 Dec  PS [psshade(shade)]
+
+REM OMIT 7 Sep  +7 MSG %"Independencia do Brasil %" %b
+#REM  7 Sep  PS [psshade(shade)] 
+
+REM OMIT 1 May +6 MSG %"Dia do Trabalhador e da Trabalhadora %" %v
+#REM 1 May  PS [psshade(shade)] 
+
+REM OMIT 2 Nov +6 MSG %"Dia de Finados %" %v
+#REM 2 Nov  PS [psshade(shade)] 
+
+REM OMIT 15 Nov +6 MSG %"Proclamacao da Republica.%" %b
+#REM  15 Nov  PS [psshade(shade)] 
+ 
+REM OMIT 12 Oct +6 MSG %"Nossa Sra Aparecida/ Dia da Crianca %" %b 
+#REM  12 Oct PS [psshade(shade)] 
+
+REM OMIT 21 Apr +6 MSG %"Tiradentes %" %v
+#REM  21 Apr PS [psshade(shade)]
+
+# feriado provavel 
+REM 28 Oct +6 MSG %"Dia do Funcionario Publico %" %v
+#REM 2 Nov  PS [psshade(shade)] 
+
+#
+# feriados fixos regionais (adapte ao seu estado e cidade)
+#
+
+#REM 23 Mar  +4 MSG %"Dia de Santa Catarina%" %v
+#REM 23 Mar  PS [psshade(shade)] 
+
+
+##REM OMIT 8 Sep  +6 MSG %"Aniversario de Curitiba %" %v
+#REM  8 Sep  PS [psshade(shade)] 
+
+#REM OMIT 23 Mar  +6 MSG %"Aniversario de Florianopolis, %_ [since(1726)] anos%" : %v
+#REM 23 Mar   PS [psshade(shade)] 
+
+#REM 19 Mar  +6 MSG %"Aniversario de Sao Jose %" %v
+
+REM 25 Jan  +6 MSG %"Aniversario de Sao Paulo%" %v
+
+#
+# feriados variaveis todos os anos
+#
+
+REM  [trigger(easterdate(today()))] MSG Pascoa  
+REM [trigger(easterdate(today()))]  PS [psshade(shade)] 
+
+OMIT [trigger(easterdate(today()) -2)]
+REM [trigger(easterdate(today()) -2)] MSG Paixao 
+REM [trigger(easterdate(today()) -2)] PS [psshade(shade)]  
+
+OMIT [trigger(easterdate(today()) -47)]
+REM  [trigger(easterdate(today()) -47)] MSG Carnaval
+REM  [trigger(easterdate(today()) -47)] PS [psshade(shade)]  
+
+OMIT [trigger(easterdate(today()) -48)]
+REM  [trigger(easterdate(today()) -48)] MSG segunda de Carnaval
+REM  [trigger(easterdate(today()))] -48 PS [psshade(shade)]  
+
+OMIT [trigger(60 + easterdate(today() - 60))] MSG Corpus Christie
