@@ -66,3 +66,8 @@ Todo
 - Module unloading and restoration.
 - Module dependency.
 - Integration with scripts project.
+- More file types:
+  - .sample: copied if no origin file exists
+  - .sh: added to the profile
+  - .mkdir: are simply created
+  - .cp: are copied
