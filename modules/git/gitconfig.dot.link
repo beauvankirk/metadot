@@ -1,0 +1,11 @@
+[sendemail]
+  smtpserver = /usr/bin/msmtp
+
+[core]
+  excludesfile = ~/.gitignore
+
+[color]
+  ui = auto
+
+[include]
+  path = .custom/gitconfig
