@@ -1,6 +1,3 @@
-[sendemail]
-  smtpserver = /usr/bin/msmtp
-
 [core]
   excludesfile = ~/.gitignore
 
