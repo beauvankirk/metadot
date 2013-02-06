@@ -115,6 +115,8 @@ bind 'K' kill
 bind 'I' login on
 bind 'O' login off
 bind '}' history
+# See http://www.forwardyouth.com/ubuntu/10-tips-for-using-gnu-screen-to-improve-productivity/
+bind s
 
 # Yet another hack:
 # Prepend/append register [/] to the paste if ^a^] is pressed.
