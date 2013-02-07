@@ -32,7 +32,7 @@ fi
 
 # Additional applications depending on the machine type
 if laptop-detect; then
-  PROGRAMS="$PROGRAMS wicd-client"
+  PROGRAMS="$PROGRAMS"
 else
   PROGRAMS="$PROGRAMS"
 fi
