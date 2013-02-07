@@ -36,7 +36,7 @@ group.commands.add(["link"],
       var href     = encodeURIComponent(doc.location.href);
       var title    = encodeURIComponent(doc.title);
       var desc     = encodeURIComponent(doc.getSelection());
-      var tags     = encodeURIComponent(args);
-      commands.execute('tabopen ' + instance + href + '&title=' + title + '&description=' + desc + '&tags=' + tags)
+      var tags     = encodeURIComponent(args.toString().replace(/,,/g, ','));
+      commands.execute('tabopen ' + instance + href + '&title=' + title + '&description=' + desc + '&tags=' + tags);
     },
     { argCount: "*" }, true);
