@@ -22,18 +22,23 @@ export PATH=$PATH:$HOME/.dotfiles:$HOME/apps/scripts:$HOME/apps/brweather/brweat
 # Editor variables, avoiding "Avoiding protocol specified" error
 export EDITOR="vim -X"
 
+# Temporary folder
+export TMPDIR="$HOME/temp/misc"
+export TMP="$HOME/temp/misc"
+mkdir -p $TMP
+
 # Dir colors
 eval "`dircolors -b ~/.dircolorsrc`"
 
 # SSH Agent
-if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
-  $HOME/apps/scripts/ssh-agent-eval
-fi
+#if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
+#  $HOME/apps/scripts/ssh-agent-eval
+#fi
 
 # GPG Agent
-if [ -e "$HOME/apps/scripts/gpg-agent-eval" ]; then
-  $HOME/apps/scripts/gpg-agent-eval
-fi
+#if [ -e "$HOME/apps/scripts/gpg-agent-eval" ]; then
+#  $HOME/apps/scripts/gpg-agent-eval
+#fi
 
 # Remove lost found folder if empty
 if [ -d "$HOME/lost+found" ]; then
