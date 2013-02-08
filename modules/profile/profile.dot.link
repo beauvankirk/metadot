@@ -31,14 +31,14 @@ mkdir -p $TMP
 eval "`dircolors -b ~/.dircolorsrc`"
 
 # SSH Agent
-#if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
-#  $HOME/apps/scripts/ssh-agent-eval
-#fi
+if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
+  $HOME/apps/scripts/ssh-agent-eval
+fi
 
 # GPG Agent
-#if [ -e "$HOME/apps/scripts/gpg-agent-eval" ]; then
-#  $HOME/apps/scripts/gpg-agent-eval
-#fi
+if [ -e "$HOME/apps/scripts/gpg-agent-eval" ]; then
+  $HOME/apps/scripts/gpg-agent-eval
+fi
 
 # Remove lost found folder if empty
 if [ -d "$HOME/lost+found" ]; then

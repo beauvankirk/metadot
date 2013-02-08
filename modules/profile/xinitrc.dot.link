@@ -7,6 +7,4 @@
 source $HOME/.xprofile &
 
 # Run window manager
-#enlightenment
-#fluxbox
-awesome
+#awesome
