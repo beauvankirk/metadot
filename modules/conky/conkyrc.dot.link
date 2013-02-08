@@ -225,9 +225,9 @@ $color$stippled_hr
 
 ${color grey}File systems:
  / $color${fs_free /}/${fs_size /} ${fs_bar 6 /}
- /home $color${fs_free /home}/${fs_size /home} ${fs_bar 6 /home}
+# /home $color${fs_free /home}/${fs_size /home} ${fs_bar 6 /home}
  /var $color${fs_free /var}/${fs_size /var} ${fs_bar 6 /var}
- /var/vservers $color${fs_free /var/vservers}/${fs_size /var/vservers} ${fs_bar 6 /var/vservers}
+# /var/vservers $color${fs_free /var/vservers}/${fs_size /var/vservers} ${fs_bar 6 /var/vservers}
  ${execpi 3600 xconky fs_home }
 #${color grey}syslog${hr 2}${color}
 #${execi 30 tail -n3 /var/log/daemon | fold -w50}
