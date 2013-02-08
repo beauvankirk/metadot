@@ -11,9 +11,9 @@ if [ -e "$HOME/.aliases" ]; then
 fi
 
 # Funcoes ZZ
-if [ -e "/usr/bin/funcoeszz" ]; then
-  . /usr/bin/funcoeszz
-fi
+#if [ -e "/usr/bin/funcoeszz" ]; then
+#  . /usr/bin/funcoeszz
+#fi
 
 # Set PATH
 PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
