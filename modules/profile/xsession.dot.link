@@ -56,7 +56,7 @@ if [ "$OSVERSION" = "7" ]; then
   #     https://bugs.launchpad.net/ubuntu/+source/gnome-keyring/+bug/932177
   unset GNOME_KEYRING_PID
   unset GNOME_KEYRING_CONTROL
-  #eval $(gnome-keyring-daemon --start) &
+  #eval $(gnome-keyring-daemon --start --components=pkcs11) &
 
   # Start window manager
   awesome
