@@ -3,7 +3,7 @@
 # .xinitrc: set basic X11 environment for non-X11 runlevel
 #
 
-# Load .xprofile 
+# Load .xprofile
 source $HOME/.xprofile &
 
 # Run window manager

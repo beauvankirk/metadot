@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# .xprofile: set basic X11 environment
+#
+
+# Load .xprofile
+#source $HOME/.xprofile &
+
+# Run window manager
+#awesome
