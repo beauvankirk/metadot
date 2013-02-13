@@ -1,0 +1,6 @@
+[default]
+Metric = True
+ID = SBSP
+#City = Sao Paulo
+#Forecast = True
+#St = SP
