@@ -1,6 +1,2 @@
 [default]
-defargs = base
-
-[base]
-metric = True
-metar = http://weather.noaa.gov/pub/data/observations/metar/decoded/SBSP.TXT
+defargs = sbsp
