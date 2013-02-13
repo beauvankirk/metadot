@@ -1,6 +1,6 @@
 [default]
-Metric = True
-ID = SBSP
-#City = Sao Paulo
-#Forecast = True
-#St = SP
+defargs = base
+
+[base]
+metric = True
+metar = http://weather.noaa.gov/pub/data/observations/metar/decoded/SBSP.TXT
