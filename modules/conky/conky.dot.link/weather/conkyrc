@@ -94,9 +94,9 @@ ${execi 3600 weather-query weather}
 
 
 
-${execpi 3600 weather-query brweather --imagem8=C1 -p 10,100 -s 60x60}
-${execpi 3600 weather-query brweather --imagem8=C2 -p 110,100 -s 60x60}
-${execpi 3600 weather-query brweather --imagem8=C3 -p 210,100 -s 60x60}
+${execpi 3600 weather-query brweather --imagem4=C1 -p 10,100 -s 60x60}
+${execpi 3600 weather-query brweather --imagem4=C2 -p 110,100 -s 60x60}
+${execpi 3600 weather-query brweather --imagem4=C3 -p 210,100 -s 60x60}
 
 
 
