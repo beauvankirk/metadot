@@ -71,3 +71,4 @@ Todo
   - .sh: added to the profile
   - .mkdir: are simply created
   - .cp: are copied
+  - .template: are copied and transformed according to environment or config variables
