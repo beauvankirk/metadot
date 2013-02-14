@@ -3,17 +3,17 @@
 # Acesse o site para maiores instruções:
 # http://brweatherproject.blogspot.com/
 
-# Agora você pode escolher quais serviços de meteorologia utilizar no BrWeather: O nacional INPE ou apenas o serviço do Google.
-# Recomenda-se que utilize os serviços do Google, apenas se o serviço nacional não funcionar. Como no caso de você residir no exterior, por exemplo.
-# O serviço nacional é muito mais completo do que o do Google. Ele oferece várias novas opções de uso. Por isso, sempre que puder, faça uso do serviço nacional.
+# Agora você pode escolher quais serviços de meteorologia utilizar no BrWeather: O nacional INPE ou o internacional Open Weather.
+# Recomenda-se que utilize os serviços do Open Weather, apenas se o serviço nacional não funcionar. Como no caso de você residir no exterior,
+# ou, no caso de o INPE não fornecer os dados completos para a usa cidade (como as condições atuais).
 # Nota: Por questões de compatibilidade e confiabilidade de informações, só é possível utilizar um tipo de serviço ao mesmo tempo.
 
 
-# No campo abaixo você ativa/desativa o modo Google.
+# No campo abaixo você ativa/desativa o modo Open Weather.
 # Escolha:
 # "0" = ATIVAR o serviço Nacinal INPE.
-# "1" = DESATIVAR o INPE e utilizar APENAS o Google.
-GOOGLE="0"
+# "1" = DESATIVAR o INPE e utilizar APENAS o serviço internacional Open Weather.
+OPEN="0"
 
 # Escolha o tempo de espera (em segundos) para a conexão.
 # Isso é útil para diminuir o tempo de resposta do programa.
@@ -29,6 +29,7 @@ TIME="10"
 # as mesmas previsões.
 TIMER="3600"
 
+
 # Especifique a codificação de caracteres.
 # Na dúvida, deixe o padrão (UTF-8).
 # Altere apenas se ocorrer problemas com os acentos das palavras.
@@ -37,8 +38,8 @@ CODIGO="UTF-8"
 ### Serviço Nacional ###
 # Para exibir informações mais precisas e, contar com várias opções, 
 # o BrWeather utiliza o serviço de meteorologia do CPTEC/INPE (Instituto Nacional de Pesquisas Espaciais).
-# Nota: Preencha o campo abaixo, apenas se estiver utilizando o serviço nacional. 
-# Se estiver utilizando apenas o serviço Google, pule para o campo "Serviço Google".
+# Nota: Preencha o campo abaixo, apenas se estiver utilizando o serviço nacional.
+# Se estiver utilizando apenas o Open Weather pule para o campo "Serviço Internacional".
 
 # CPTEC/INPE
 # Acesse o site:
@@ -53,30 +54,18 @@ CODIGO="UTF-8"
 # Na barra de URL, constará um código numérico.
 # Ex.: http://www.cptec.inpe.br/cidades/tempo/4901
 # Anote o número e coloque no campo abaixo, no lugar de "2247".
-#CPTEC_INPE="2247"
 CPTEC_INPE="244"
 
 
+### Observação importante: ###
+# Se a sua cidade constar no site do INPE, mas não possuir a previsão completa (com dados como condições atuais, temperatura atual, nível de umidade atual, etc), você deve utilizar o BrWeather no modo Open.
 
 
-### Serviço Google ###
-# Este serviço mantém as mesmas características da antiga versão do BrWeather (chamada W.F.C.).
-# O modo de configuração permanece o mesmo.
+### Serviço Internacional ###
 # Importante: Não é necessário preencher estes campos se você utiliza somente o serviço nacional.
-
-
-# Evite colocar acentos.
-# Respeite espaços.
-# Respeite maiúsculas e minúsculas.
-# Exs.: Campo Grande = Campo Grande
-# São Paulo = Sao Paulo
-# Japão = Japao
-
-# Especifique a sua cidade:
-CITY="Sao Paulo"
-
-# Especifique seu Estado:
-STATE="Sao Paulo"
-
-# Especifique seu País:
-COUNTRY="Brasil"
+# Acesse o site: http://openweathermap.org
+# Procure pela sua cidade no mapa, e clique no ícone de previsão da mesma
+# Assim que abrir a página com a previsão completa, veja que na barra de URL constará um código númérico.
+# Ex.: http://openweathermap.org/city/3461786
+# Anote o número e adicione no campo abaixo, no lugar de "3461786".
+OPEN_ID="3448439"
