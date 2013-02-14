@@ -79,6 +79,9 @@ elif [ "$OPT" == "ls" ]; then
   ls -1 $MODULES
 elif [ "$OPT" == "update" ]; then
   ( cd $DOT && git pull origin master && git submodule update --init )
+elif [ "$OPT" == "backup" ]; then
+  shift
+  metadot_backup $1
 elif [ "$OPT" == "load" ]; then
   shift
 
