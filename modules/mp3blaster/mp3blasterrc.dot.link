@@ -1,0 +1,25 @@
+# black, red, green, yellow, blue, magenta, cyan, white
+
+Color.Default.fg = white
+Color.Default.bg = black
+Color.Popup.fg = white
+Color.Popup.bg = black
+Color.PopupInput.fg = red
+Color.PopupInput.bg = black
+Color.Error.fg = red
+Color.Error.bg = black
+Color.Button.fg = green
+Color.Button.fg = green
+Color.Button.bg = black
+Color.ShortCut.fg = red
+Color.ShortCut.bg = black
+Color.Label.fg = white
+Color.Label.bg = black
+Color.Number.fg = green
+Color.Number.bg = black
+Color.FileMp3.fg = green
+Color.FileDir.fg = green
+Color.FileLst.fg = white
+Color.FileWin.fg = white
+HideOtherFiles = true
+PlaylistDir = /var/data/noise/
