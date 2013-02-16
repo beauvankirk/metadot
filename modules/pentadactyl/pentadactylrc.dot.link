@@ -19,6 +19,6 @@ set go+=n
 
 " Copy page title
 " Thanks to https://github.com/laurentb/public-dotfiles/blob/master/desktop/.pentadactyl/main.penta
-command yt :yank :echo document.title.replace(/ - Pentadactyl$/, '');
+command yt :yank :echo document.title.replace(/ - Firefox$/, '');
 
 " vim: set ft=pentadactyl:
