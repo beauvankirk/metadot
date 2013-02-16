@@ -17,4 +17,8 @@ set go+=n
 " Avoid theme overwriting during syncs
 "set! general.skins.selectedSkin=rein
 
+" Copy page title
+" Thanks to https://github.com/laurentb/public-dotfiles/blob/master/desktop/.pentadactyl/main.penta
+command yt :yank :echo document.title.replace(/ - Pentadactyl$/, '');
+
 " vim: set ft=pentadactyl:
