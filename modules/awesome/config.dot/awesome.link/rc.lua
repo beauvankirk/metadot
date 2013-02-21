@@ -2,10 +2,15 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
+
 -- Theme handling library
 require("beautiful")
+
 -- Notification library
 require("naughty")
+
+-- Widget libraries
+require("vicious")
 
 -- Load Debian menu entries
 require("debian.menu")
@@ -45,6 +50,11 @@ layouts =
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier
 }
+-- }}}
+
+-- {{{ Widgets
+-- Leds
+dofile(configdir .. "/leds.lua")
 -- }}}
 
 -- {{{ Tags
@@ -152,6 +162,7 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         s == 1 and mysystray or nil,
+        myledbox,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
@@ -361,7 +372,7 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Custom
+-- Key mappings
 dofile(configdir .. "/keys.lua")
 
 -- Startup commands
