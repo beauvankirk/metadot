@@ -11,8 +11,13 @@ globalkeys = awful.util.table.join(root.keys(),
     awful.key({ modkey, "Control" }, "h", function () awful.util.spawn("xhibernate") end),
     awful.key({ modkey, "Control" }, "k", function () awful.util.spawn("kedpm") end),
     awful.key({ modkey, "Control" }, "c", function () awful.util.spawn("chromium-browser") end),
-    awful.key({ modkey, "Control" }, "t", function () awful.util.spawn("thunar") end)
+    awful.key({ modkey, "Control" }, "t", function () awful.util.spawn("thunar") end),
     --awful.key({ modkey, "Control" }, "b", function () awful.util.spawn("terminal irssi") end),
+
+    -- Volume keys
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 9%+", false) end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 9%-", false) end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle", false) end)
 )
 
 -- Set keys
