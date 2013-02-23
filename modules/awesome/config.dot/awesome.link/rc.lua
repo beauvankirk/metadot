@@ -164,7 +164,6 @@ for s = 1, screen.count() do
         mytextclock,
         s == 1 and mysystray or nil,
         myledbox,
-        volume_widget,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }

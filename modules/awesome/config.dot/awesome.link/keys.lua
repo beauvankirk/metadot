@@ -14,6 +14,9 @@ globalkeys = awful.util.table.join(root.keys(),
     awful.key({ modkey, "Control" }, "t", function () awful.util.spawn("thunar") end),
     --awful.key({ modkey, "Control" }, "b", function () awful.util.spawn("terminal irssi") end),
 
+    -- Xlock
+    awful.key({ }, "XF86ScreenSaver", function () awful.util.spawn("xlock") end),
+
     -- Volume keys
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 9%+", false) end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 9%-", false) end),
