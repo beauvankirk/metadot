@@ -13,3 +13,6 @@
 [submodule "modules/conky/apps/brweather.link"]
 	path = modules/conky/apps/brweather.link
 	url = git://git.sarava.org/brweather.git
+[submodule "modules/vim/vim.dot.link/bundle/tabular"]
+	path = modules/vim/vim.dot.link/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
