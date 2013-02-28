@@ -55,6 +55,7 @@ layouts =
 -- {{{ Widgets
 -- Leds
 dofile(configdir .. "/leds.lua")
+dofile(configdir .. "/awesompd.lua")
 --dofile(configdir .. "/volume.lua")
 -- }}}
 
@@ -164,6 +165,7 @@ for s = 1, screen.count() do
         mytextclock,
         s == 1 and mysystray or nil,
         myledbox,
+        musicwidget.widget,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }

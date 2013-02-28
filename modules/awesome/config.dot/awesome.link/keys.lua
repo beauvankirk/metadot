@@ -23,5 +23,8 @@ globalkeys = awful.util.table.join(root.keys(),
     awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle", false) end)
 )
 
+-- Append keys from music widget
+musicwidget:append_global_keys()
+
 -- Set keys
 root.keys(globalkeys)

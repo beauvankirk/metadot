@@ -16,3 +16,6 @@
 [submodule "modules/vim/vim.dot.link/bundle/tabular"]
 	path = modules/vim/vim.dot.link/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "modules/awesome/config.dot/awesome.link/awesompd"]
+	path = modules/awesome/config.dot/awesome.link/awesompd
+	url = https://github.com/alexander-yakushev/awesompd
