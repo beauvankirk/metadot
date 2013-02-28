@@ -1,2 +1,7 @@
 XTerm*metaSendsEscape: true
 URxvt*searchable-scrollback: M-S
+
+! The string will be interpreted as if typed into the shell as-is.
+! In this example, printing will be disabled altogether.
+! See https://wiki.gentoo.org/wiki/Rxvt-unicode#Printing
+URxvt.print-pipe: "cat > /dev/null"
