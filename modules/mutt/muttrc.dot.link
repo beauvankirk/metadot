@@ -54,7 +54,7 @@ set charset = "utf-8"
 # ----------------------
 # OS Specifiques options
 # ----------------------
-#set print = ask-no
+set print = ask-no
 #set print_command = "lpr"
 #set print_decode = yes
 #set ispell = "ispell"
