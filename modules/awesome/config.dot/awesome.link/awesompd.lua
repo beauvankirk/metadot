@@ -36,6 +36,8 @@
  			         --{ "Control", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_next_track() },
       			   { "", "XF86AudioPrev", musicwidget:command_prev_track() },
  			         { "", "XF86AudioNext", musicwidget:command_next_track() },
+      			   { modkey, "XF86AudioPrev", musicwidget:command_previous_server() },
+ 			         { modkey, "XF86AudioNext", musicwidget:command_next_server() },
  			         --{ "", awesompd.MOUSE_SCROLL_UP, musicwidget:command_volume_up() },
  			         --{ "", awesompd.MOUSE_SCROLL_DOWN, musicwidget:command_volume_down() },
  			         { "", awesompd.MOUSE_RIGHT, musicwidget:command_show_menu() },

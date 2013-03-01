@@ -18,4 +18,4 @@
 	url = https://github.com/godlygeek/tabular.git
 [submodule "modules/awesome/config.dot/awesome.link/awesompd"]
 	path = modules/awesome/config.dot/awesome.link/awesompd
-	url = https://github.com/alexander-yakushev/awesompd
+	url = git://git.sarava.org/awesompd.git
