@@ -56,7 +56,7 @@ layouts =
 -- Leds
 dofile(configdir .. "/leds.lua")
 dofile(configdir .. "/awesompd.lua")
---dofile(configdir .. "/volume.lua")
+dofile(configdir .. "/volume.lua")
 -- }}}
 
 -- {{{ Tags
@@ -164,6 +164,7 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         s == 1 and mysystray or nil,
+        volume_widget,
         myledbox,
         musicwidget.widget,
         mytasklist[s],
