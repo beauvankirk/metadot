@@ -1,0 +1,44 @@
+# Some regexps specifying names and paths to ignore
+ignore = Path .unison/*
+ignore = Path .cache/*
+ignore = Path .dbus/*
+ignore = Path .mozilla/firefox/*/Cache/*
+ignore = Name .Xauthority
+ignore = Name .xsession-errors
+ignore = Name .ICEauthority
+ignore = Name .DCOPserver*
+ignore = Name .gpg-agent-info
+ignore = Name .ssh/environment
+ignore = Name .config/chromium/SingletonSocket
+ignore = Name .config/gxine/socket
+ignore = Name .darksnow/darksnow.temp
+ignore = Name .moc/socket
+ignore = Name .moc/cache
+ignore = Name .speech-dispatcher
+ignore = Name .xine/session.0
+ignore = Name .MumbleOverlayPipe
+ignore = Name .MumbleSocket
+ignore = Name .brweather/cache/cache
+ignore = Name .brweather/cache/lastupdate
+ignore = Name .brweather/cache/previsao
+ignore = Name .brweather/cache/timer
+ignore = Name .brweather/log
+ignore = Name .thumbnails
+ignore = Name .gftp/cache
+ignore = Name .ecryptfs
+ignore = Name .Private
+ignore = Name .weather/datacache
+ignore = Name mail/.notmuch
+ignore = Name temp/misc
+ignore = Name .pulse
+
+# Do not ignore these paths
+ignorenot = Name .unison/*.prf
+ignorenot = Name .pulse/client.conf
+
+# Log
+logfile = .unison/unison.log
+
+# Automatically accept default (nonconflicting) actions
+auto = true
+addversionno = true
