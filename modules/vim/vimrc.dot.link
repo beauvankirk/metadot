@@ -18,14 +18,6 @@ set title
 set titleold="terminal"
 set titlestring=vim:\ %F
 
-" See http://vim.wikia.com/wiki/Automatically_set_screen_title
-"autocmd BufLeave    *        !xtitle mutt
-"autocmd VimLeavePre *        let &titlestring="mutt"
-"autocmd VimLeavePre *        !xtitle mutt
-"autocmd VimLeavePre *        !xtitle mutt
-"autocmd VimLeavePre *mutt*   let &titlestring="mutt"
-"autocmd VimLeavePre *remind* let &titlestring="wyrd"
-
 " Thanks to http://stackoverflow.com/questions/1673649/vimrc-action-onclose
 function! ResetTitle(title)
     " disable vim's ability to set the title
