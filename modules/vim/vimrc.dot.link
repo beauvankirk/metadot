@@ -18,6 +18,27 @@ set title
 set titleold="terminal"
 set titlestring=vim:\ %F
 
+" See http://vim.wikia.com/wiki/Automatically_set_screen_title
+"autocmd BufLeave    *        !xtitle mutt
+"autocmd VimLeavePre *        let &titlestring="mutt"
+"autocmd VimLeavePre *        !xtitle mutt
+"autocmd VimLeavePre *        !xtitle mutt
+"autocmd VimLeavePre *mutt*   let &titlestring="mutt"
+"autocmd VimLeavePre *remind* let &titlestring="wyrd"
+
+" Thanks to http://stackoverflow.com/questions/1673649/vimrc-action-onclose
+function! ResetTitle(title)
+    " disable vim's ability to set the title
+    exec "set title t_ts='' t_fs=''"
+
+    " and restore it
+    "exec ":!echo -e '\033kbash\033\\'\<CR>"
+    exec ":!xtitle " a:title
+endfunction
+
+au VimLeave *mutt/*   silent call ResetTitle("mutt")
+au VimLeave *remind/* silent call ResetTitle("wyrd")
+
 " Folding
 set foldmethod=syntax
 let php_folding = 1
@@ -31,7 +52,7 @@ au BufNewFile,BufRead *.mdwn set ft=ikiwiki
 au BufNewFile,BufRead *.rem set ft=remind
 
 augroup mkd
- autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+ autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
 if has("autocmd")
