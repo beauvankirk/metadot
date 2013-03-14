@@ -50,6 +50,15 @@ if [ -f "$HOME/.Xmodmaps/$HOSTNAME" ]; then
   xmodmap $HOME/.Xmodmaps/$HOSTNAME
 fi
 
+# Fix mumble configuration, which varies depending on machine audio
+if [ -f "$HOME/.config/Mumble/Mumble-$HOSTNAME.conf" ]; then
+  (
+    cd $HOME/.config/Mumble
+    mv Mumble.conf Mumble-$HOSTNAME.conf.backup
+    ln -s Mumble-$HOSTNAME.conf Mumble.conf
+  )
+fi
+
 # Execute window manager
 if [ "$OSVERSION" = "7" ]; then
   # See https://bugzilla.redhat.com/show_bug.cgi?id=783568
