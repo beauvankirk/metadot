@@ -62,6 +62,7 @@ dofile(configdir .. "/leds.lua")
 dofile(configdir .. "/volume.lua")
 
 if file_exists(homedir .. "/.custom/awesome/awesompd.lua") then
+  awesompd = true
   dofile(configdir .. "/awesompd.lua")
 end
 -- }}}
@@ -173,7 +174,7 @@ for s = 1, screen.count() do
         s == 1 and mysystray or nil,
         volume_widget,
         myledbox,
-        musicwidget.widget,
+        awesompd == true and musicwidget.widget or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
