@@ -24,7 +24,9 @@ globalkeys = awful.util.table.join(root.keys(),
 )
 
 -- Append keys from music widget
-musicwidget:append_global_keys()
+if awesompd == true then
+  musicwidget:append_global_keys()
+end
 
 -- Set keys
 root.keys(globalkeys)
