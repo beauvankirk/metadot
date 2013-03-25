@@ -52,11 +52,18 @@ layouts =
 }
 -- }}}
 
+-- {{{ Misc functions
+dofile(configdir .. "/functions.lua")
+-- }}}
+
 -- {{{ Widgets
 -- Leds
 dofile(configdir .. "/leds.lua")
-dofile(configdir .. "/awesompd.lua")
 dofile(configdir .. "/volume.lua")
+
+if file_exists(homedir .. "/.custom/awesome/awesompd.lua") then
+  dofile(configdir .. "/awesompd.lua")
+end
 -- }}}
 
 -- {{{ Tags
