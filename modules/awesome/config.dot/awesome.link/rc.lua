@@ -174,7 +174,7 @@ for s = 1, screen.count() do
         s == 1 and mysystray or nil,
         volume_widget,
         myledbox,
-        awesompd == true and musicwidget.widget or nil,
+        awesompd and musicwidget.widget or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
