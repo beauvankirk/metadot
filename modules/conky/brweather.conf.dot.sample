@@ -4,7 +4,7 @@
 # http://brweatherproject.blogspot.com/
 
 # Pasta base
-DIRNAME="$HOME/apps/brweather"
+DIRNAME="$HOME/apps/brweather/brweather"
 
 # Agora você pode escolher quais serviços de meteorologia utilizar no BrWeather: O nacional INPE ou o internacional Open Weather.
 # Recomenda-se que utilize os serviços do Open Weather, apenas se o serviço nacional não funcionar. Como no caso de você residir no exterior,
