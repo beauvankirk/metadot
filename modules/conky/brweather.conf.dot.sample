@@ -3,11 +3,13 @@
 # Acesse o site para maiores instruções:
 # http://brweatherproject.blogspot.com/
 
+# Pasta base
+DIRNAME="$HOME/apps/brweather"
+
 # Agora você pode escolher quais serviços de meteorologia utilizar no BrWeather: O nacional INPE ou o internacional Open Weather.
 # Recomenda-se que utilize os serviços do Open Weather, apenas se o serviço nacional não funcionar. Como no caso de você residir no exterior,
 # ou, no caso de o INPE não fornecer os dados completos para a usa cidade (como as condições atuais).
 # Nota: Por questões de compatibilidade e confiabilidade de informações, só é possível utilizar um tipo de serviço ao mesmo tempo.
-
 
 # No campo abaixo você ativa/desativa o modo Open Weather.
 # Escolha:
@@ -28,7 +30,6 @@ TIME="10"
 # Um invervalo menor do que 30min não é recomendado, uma vez que o BrWeather baixaria apenas
 # as mesmas previsões.
 TIMER="3600"
-
 
 # Especifique a codificação de caracteres.
 # Na dúvida, deixe o padrão (UTF-8).
@@ -56,10 +57,8 @@ CODIGO="UTF-8"
 # Anote o número e coloque no campo abaixo, no lugar de "2247".
 CPTEC_INPE="244"
 
-
 ### Observação importante: ###
 # Se a sua cidade constar no site do INPE, mas não possuir a previsão completa (com dados como condições atuais, temperatura atual, nível de umidade atual, etc), você deve utilizar o BrWeather no modo Open.
-
 
 ### Serviço Internacional ###
 # Importante: Não é necessário preencher estes campos se você utiliza somente o serviço nacional.
