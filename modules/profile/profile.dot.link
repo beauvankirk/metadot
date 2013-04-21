@@ -30,10 +30,23 @@ mkdir -p $TMP
 # Dir colors
 eval "`dircolors -b ~/.dircolorsrc`"
 
-# SSH Agent
-#if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
-#  $HOME/apps/scripts/ssh-agent-eval
-#fi
+# SSH and GPG Agents
+if [ -e "$HOME/.ssh/id_rsa" ]; then
+  mkdir -p $HOME/.keychain
+  /usr/bin/keychain -q $HOME/.ssh/id_rsa
+
+  if [ -e "$HOME/.keychain/$HOSTNAME-sh" ]; then
+    source $HOME/.keychain/$HOSTNAME-sh
+  fi
+
+  if [ -e "$HOME/.keychain/$HOSTNAME-sh-gpg" ]; then
+    source $HOME/.keychain/$HOSTNAME-sh-gpg
+  fi
+
+  #if [ -e "$HOME/apps/scripts/ssh-agent-eval" ]; then
+  #  $HOME/apps/scripts/ssh-agent-eval
+  #fi
+fi
 
 # GPG Agent
 #if [ -e "$HOME/apps/scripts/gpg-agent-eval" ]; then
