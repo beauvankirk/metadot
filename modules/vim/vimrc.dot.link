@@ -39,9 +39,10 @@ let g:sh_fold_enabled = 1
 " PHP
 let php_sql_query = 1
 
-au BufNewFile,BufRead *.thtml setfiletype php
-au BufNewFile,BufRead *.mdwn set ft=ikiwiki
-au BufNewFile,BufRead *.rem set ft=remind
+au BufNewFile,BufRead *.thtml set ft=php
+au BufNewFile,BufRead *.mdwn  set ft=ikiwiki
+au BufNewFile,BufRead *.md    set ft=ikiwiki
+au BufNewFile,BufRead *.rem   set ft=remind
 
 augroup mkd
  autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:>
