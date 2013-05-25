@@ -3,7 +3,7 @@
 #
 
 MAILDIR=$HOME/mail
-LOGFILE=$HOME/.procmaillog
+LOGFILE=$HOME/temp/misc/procmaillog
 LOGABSTRACT=no
 VERBOSE=off
 FORMAIL=/usr/bin/formail
@@ -16,14 +16,18 @@ NL="
 ##conditions are anded and everything after * is fed straight into egrep
 ##one action line follows the conditions, in this case it is a mailbox name
 
-################################
-# Last rule: mail that gets    #
-# this far goes in default box #
-################################
+# Custom recipes
+INCLUDERC=$HOME/.custom/procmailrc
+
+# SPAM handling
 :0:
 * ^X-Spam-Flag: YES
 INBOX.Trash/new
 
+################################
+# Last rule: mail that gets    #
+# this far goes in default box #
+################################
 :0
 * .*
 INBOX/new
