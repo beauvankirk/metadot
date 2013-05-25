@@ -16,13 +16,24 @@ NL="
 ##conditions are anded and everything after * is fed straight into egrep
 ##one action line follows the conditions, in this case it is a mailbox name
 
-# Custom recipes
-INCLUDERC=$HOME/.custom/procmailrc
-
+#
 # SPAM handling
+#
+
 :0:
 * ^X-Spam-Flag: YES
 INBOX.Trash/new
+
+:0:
+*^Subject:.*(SPAM)
+INBOX.Trash/new
+
+:0:
+*^X-Bogosity:.*Yes
+INBOX.Trash/new
+
+# Custom recipes
+INCLUDERC=$HOME/.custom/procmailrc
 
 ################################
 # Last rule: mail that gets    #
