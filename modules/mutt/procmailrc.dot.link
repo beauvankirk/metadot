@@ -20,6 +20,27 @@ NL="
 # SPAM handling
 #
 
+# Send mail through bogofilter
+# See http://www.exstrom.com/journal/comp/bogofilter.html
+#     http://www.linuxjournal.com/article/6439
+#     http://bogofilter.sourceforge.net/faq.shtml
+:0fw
+| /usr/bin/bogofilter -uep
+
+# Put mail bogofilter deems as spam in spam folder
+:0:
+* ^X-Bogosity: Spam, tests=bogofilter
+INBOX.Trash/new
+
+# Put mail bogofilter deems as unsure in spam folder
+:0:
+* ^X-Bogosity: Unsure, tests=bogofilter
+INBOX.Trash/new
+
+:0:
+*^X-Spam-Level: ******
+INBOX.Trash/new
+
 :0:
 * ^X-Spam-Flag: YES
 INBOX.Trash/new
