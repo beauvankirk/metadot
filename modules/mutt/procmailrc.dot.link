@@ -33,9 +33,9 @@ NL="
 INBOX.Trash/new
 
 # Put mail bogofilter deems as unsure in spam folder
-:0:
-* ^X-Bogosity: Unsure, tests=bogofilter
-INBOX.Trash/new
+#:0:
+#* ^X-Bogosity: Unsure, tests=bogofilter
+#INBOX.Trash/new
 
 :0:
 *^X-Spam-Level: ******
