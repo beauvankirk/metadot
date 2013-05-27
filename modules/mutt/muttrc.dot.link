@@ -418,6 +418,8 @@ macro index l "<enter-command>unset wait_key\n<tag-prefix><pipe-entry>bogofilter
 macro pager l "<enter-command>unset wait_key\n<pipe-entry>bogofilter -Mn\n<enter-command>set wait_key\n<list-reply>"
 macro index X "<enter-command>unset wait_key\n<tag-prefix><pipe-entry>bogofilter -MNs\n<enter-command>set wait_key\n<tag-prefix><delete-message>"
 macro pager X "<enter-command>unset wait_key\n<pipe-entry>bogofilter -MNs\n<enter-command>set wait_key\n<delete-message>"
+macro index H "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n" "Learn as ham and save"
+macro pager H "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n" "Learn as ham and save"
 
 # Schleuder config
 # see http://schleuder2.nadir.org/contrib/schleuder-with-mutt.html
