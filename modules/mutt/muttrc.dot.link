@@ -355,6 +355,7 @@ macro index <esc>f "!clear;fetchmail\n" "Sync remote with local mail"
 macro pager G "!clear;fetchmail\n" "Sync remote with local mail"
 macro index G "!clear;fetchmail\n" "Sync remote with local mail"
 macro index $ "<change-folder>=INBOX/\n<sync-mailbox>" "Sync mailbox and refresh list of new messages"
+macro index n "<next-unread-mailbox>"
 
 # -------------
 # Ignore fields
