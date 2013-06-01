@@ -12,6 +12,7 @@ globalkeys = awful.util.table.join(root.keys(),
     awful.key({ modkey, "Control" }, "k", function () awful.util.spawn("kedpm") end),
     awful.key({ modkey, "Control" }, "c", function () awful.util.spawn("chromium-browser") end),
     awful.key({ modkey, "Control" }, "t", function () awful.util.spawn("thunar") end),
+    awful.key({ modkey, "Control" }, "w", function () awful.util.spawn("terminal 'sleep 0.2 && wyrd'") end),
     --awful.key({ modkey, "Control" }, "b", function () awful.util.spawn("terminal irssi") end),
 
     -- Xlock
