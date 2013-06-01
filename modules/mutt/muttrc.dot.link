@@ -356,6 +356,7 @@ macro pager G "<enter-command>unset wait_key\n!clear ; fetchmail || [ $? -eq 1 ]
 macro index G "<enter-command>unset wait_key\n!clear ; fetchmail || [ $? -eq 1 ]\n<change-folder>=INBOX/\n<sync-mailbox><buffy-list>" "Fetch new mail"
 #macro index $ "<change-folder>=INBOX/\n<sync-mailbox>" "Sync mailbox and refresh list of new messages"
 macro index n "<next-unread-mailbox>"
+macro pager n "<next-unread-mailbox>"
 
 # -------------
 # Ignore fields
