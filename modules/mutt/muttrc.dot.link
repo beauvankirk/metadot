@@ -352,9 +352,9 @@ mailboxes `echo $HOME/mail/Sync/*/*`
 #macro index <esc>f "!clear;fetchmail;philter.sh\n" "Sync remote with local mail"
 macro pager <esc>f "!clear;fetchmail\n" "Sync remote with local mail"
 macro index <esc>f "!clear;fetchmail\n" "Sync remote with local mail"
-macro pager G "<enter-command>unset wait_key\n!clear ; fetchmail || [ $? -eq 1 ]\n<change-folder>=INBOX/\n<sync-mailbox>\n" "Sync remote with local mail"
-macro index G "<enter-command>unset wait_key\n!clear ; fetchmail || [ $? -eq 1 ]\n<change-folder>=INBOX/\n<sync-mailbox>\n" "Sync remote with local mail"
-macro index $ "<change-folder>=INBOX/\n<sync-mailbox>\n" "Sync mailbox and refresh list of new messages"
+macro pager G "<enter-command>unset wait_key\n!clear ; fetchmail || [ $? -eq 1 ]\n<change-folder>=INBOX/\n<sync-mailbox>" "Sync remote with local mail"
+macro index G "<enter-command>unset wait_key\n!clear ; fetchmail || [ $? -eq 1 ]\n<change-folder>=INBOX/\n<sync-mailbox>" "Sync remote with local mail"
+#macro index $ "<change-folder>=INBOX/\n<sync-mailbox>" "Sync mailbox and refresh list of new messages"
 macro index n "<next-unread-mailbox>"
 
 # -------------
