@@ -69,6 +69,9 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
 
+" Shortcut to open a new tab
+nmap <ESC>n :tabnew<CR>
+
 " NERDTree section
 " Thanks to http://stackoverflow.com/questions/1447334/how-do-you-add-nerdtree-to-your-vimrc
 
