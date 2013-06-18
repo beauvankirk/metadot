@@ -19,6 +19,9 @@ fi
 PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
 export PATH=$PATH:$HOME/.dotfiles:$HOME/apps/scripts:$HOME/apps/brweather/brweather
 
+# See http://www.caliban.org/bash/#bashtips
+export CDPATH=".:~:~/code:~/data:~/file"
+
 # Editor variables, avoiding "Avoiding protocol specified" error
 export EDITOR="vim -X"
 
