@@ -84,3 +84,9 @@ function OpenNERDTree()
   command -nargs=0 OpenNERDTree :call OpenNERDTree()
 
   nmap <ESC>t :OpenNERDTree<CR>
+
+" See http://superuser.com/questions/10588/how-to-make-cut-copy-paste-in-gvim-on-ubuntu-work-with-ctrlx-ctrlc-ctrlv
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
