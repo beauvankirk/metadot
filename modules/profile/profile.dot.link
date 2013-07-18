@@ -27,6 +27,7 @@ export EDITOR="vim -X"
 
 # Basic git configuration
 export GIT_PS1_SHOWDIRTYSTATE="1"
+export GIT_PS1_SHOWSTASHSTATE="1"
 
 # Temporary folder
 export TMPDIR="$HOME/temp/misc"
