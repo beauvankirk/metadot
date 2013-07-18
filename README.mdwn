@@ -72,7 +72,3 @@ Todo
   - .mkdir: are simply created
   - .cp: are copied
   - .template: are copied and transformed according to environment or config variables
-- Possible integrations
-  - https://github.com/lvv/git-prompt/
-  - http://titusd.co.uk/2010/03/09/show-your-git-branch-name-in-your-gnu-screen-status-line/
-  - http://unix.stackexchange.com/questions/28430/screen-status-bar-to-display-current-directory-for-zsh-bash-shell
