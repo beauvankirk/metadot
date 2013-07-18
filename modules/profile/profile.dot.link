@@ -25,6 +25,9 @@ export CDPATH=".:~:~/code:~/data:~/file:/var/www/data"
 # Editor variables, avoiding "Avoiding protocol specified" error
 export EDITOR="vim -X"
 
+# Basic git configuration
+export GIT_PS1_SHOWDIRTYSTATE="1"
+
 # Temporary folder
 export TMPDIR="$HOME/temp/misc"
 export TMP="$HOME/temp/misc"
