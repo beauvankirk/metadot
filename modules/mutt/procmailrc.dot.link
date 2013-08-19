@@ -27,6 +27,9 @@ NL="
 :0fw
 | /usr/bin/bogofilter -uep
 
+# Custom recipes
+INCLUDERC=$HOME/.custom/procmailrc
+
 # Put mail bogofilter deems as spam in spam folder
 :0:
 * ^X-Bogosity: Spam, tests=bogofilter
@@ -52,9 +55,6 @@ INBOX.Trash/new
 :0:
 *^X-Bogosity:.*Yes
 INBOX.Trash/new
-
-# Custom recipes
-INCLUDERC=$HOME/.custom/procmailrc
 
 ################################
 # Last rule: mail that gets    #
