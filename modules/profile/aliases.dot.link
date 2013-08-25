@@ -6,6 +6,7 @@ alias kedpmc="kedpm -c"
 alias gvim="vim.gtk -g &> /dev/null"
 alias news="newsbeuter #; newsbeuter -X"
 alias music="ncmpcpp"
+alias mkdir="mkdir -p"
 
 # Editor, avoiding "Avoiding protocol specified" error
 alias vim="vim -X"
