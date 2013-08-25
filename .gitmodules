@@ -19,3 +19,6 @@
 [submodule "modules/awesome/config.dot/awesome.link/awesompd"]
 	path = modules/awesome/config.dot/awesome.link/awesompd
 	url = git://git.sarava.org/awesompd.git
+[submodule "modules/pentadactyl/pentadactyl.dot/plugins.link/toggleproxy"]
+	path = modules/pentadactyl/pentadactyl.dot/plugins.link/toggleproxy
+	url = https://github.com/congma/toggleproxy
