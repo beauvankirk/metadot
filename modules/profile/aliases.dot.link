@@ -8,6 +8,7 @@ alias news="newsbeuter #; newsbeuter -X"
 alias music="ncmpcpp"
 alias mkdir="mkdir -p"
 alias today="date +%Y%m%d"
+alias month="date +%Y%m"
 
 # Editor, avoiding "Avoiding protocol specified" error
 alias vim="vim -X"
