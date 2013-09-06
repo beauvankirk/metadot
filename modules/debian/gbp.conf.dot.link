@@ -1,10 +1,12 @@
 [DEFAULT]
-builder = my-pdebuild-nosign
+builder = git-pbuilder
 cleaner = fakeroot debian/rules clean
 pristine-tar = True
 color = auto
+
 [git-buildpackage]
 export-dir = ../build-area/
 tarball-dir = ../tarballs/
+
 [git-import-orig]
 dch = False
