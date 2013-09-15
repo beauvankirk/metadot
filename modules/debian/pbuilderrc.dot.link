@@ -77,3 +77,6 @@ else
     echo "Unknown distribution: $DIST"
     exit 1
 fi
+
+# Custom hooks
+HOOKDIR="$HOME/.config/pbuilder/hooks/"
