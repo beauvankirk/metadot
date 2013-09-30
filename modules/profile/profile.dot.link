@@ -26,8 +26,9 @@ export CDPATH=".:~:~/code:~/data:~/file:/var/www/data"
 export EDITOR="vim -X"
 
 # Basic git configuration
-export GIT_PS1_SHOWDIRTYSTATE="1"
-export GIT_PS1_SHOWSTASHSTATE="1"
+# See http://stackoverflow.com/questions/4192014/git-ps1-extremely-slow-in-kernel-tree
+export GIT_PS1_SHOWDIRTYSTATE=""
+export GIT_PS1_SHOWUNTRACKEDFILES=""
 
 # Temporary folder
 export TMPDIR="$HOME/temp/misc"
