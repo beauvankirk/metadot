@@ -77,6 +77,8 @@ if [ -z "$OPT" ]; then
   exit 1
 elif [ "$OPT" == "ls" ]; then
   ls -1 $MODULES
+elif [ "$OPT" == "version" ]; then
+  ( cd $DOT && git log -n 1 )
 elif [ "$OPT" == "update" ]; then
   ( cd $DOT && git pull origin master && git submodule update --init )
 elif [ "$OPT" == "backup" ]; then
