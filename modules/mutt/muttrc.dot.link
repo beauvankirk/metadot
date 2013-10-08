@@ -385,6 +385,7 @@ ignore Content
 ignore DKIM-Signature
 unignore X-Mailer
 unignore User-Agent
+unignore List-Archive
 
 # ---------
 # Auto view
