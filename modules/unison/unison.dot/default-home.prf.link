@@ -33,6 +33,7 @@ ignore = Name temp/misc
 ignore = Name .pulse
 ignore = Name .config/Mumble/Mumble.conf
 ignore = Name .gvfs
+ignore = Name .config/geeqie/.command
 
 # Do not ignore these paths
 ignorenot = Name .unison/*.prf
