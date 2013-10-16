@@ -29,14 +29,14 @@ REM OMIT 2 Nov +6 MSG %"Dia de Finados %" %v
 REM OMIT 15 Nov +6 MSG %"Proclamacao da Republica.%" %b
 #REM  15 Nov  PS [psshade(shade)] 
  
-REM OMIT 12 Oct +6 MSG %"Nossa Sra Aparecida/ Dia da Crianca %" %b 
+#REM OMIT 12 Oct +6 MSG %"Nossa Sra Aparecida/ Dia da Crianca %" %b 
 #REM  12 Oct PS [psshade(shade)] 
 
 REM OMIT 21 Apr +6 MSG %"Tiradentes %" %v
 #REM  21 Apr PS [psshade(shade)]
 
 # feriado provavel 
-REM 28 Oct +6 MSG %"Dia do Funcionario Publico %" %v
+#REM 28 Oct +6 MSG %"Dia do Funcionario Publico %" %v
 #REM 2 Nov  PS [psshade(shade)] 
 
 #
