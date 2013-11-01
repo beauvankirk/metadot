@@ -2,8 +2,8 @@
 # Codenames for Debian suites according to their alias. Update these when
 # needed.
 UNSTABLE_CODENAME="sid"
-TESTING_CODENAME="wheezy"
-STABLE_CODENAME="squeeze"
+TESTING_CODENAME="jessie"
+STABLE_CODENAME="wheezy"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
 
 # List of Debian suites.
@@ -54,9 +54,9 @@ if [ -n "${ARCH}" ]; then
     NAME="$NAME-$ARCH"
     DEBOOTSTRAPOPTS=("--arch" "$ARCH" "${DEBOOTSTRAPOPTS[@]}")
 fi
-BASETGZ="/var/cache/pbuilder/$NAME-base.tgz"
+#BASETGZ="/var/cache/pbuilder/$NAME-base.tgz"
 # Optionally, set BASEPATH (and not BASETGZ) if using cowbuilder
-# BASEPATH="/var/cache/pbuilder/$NAME/base.cow/"
+BASEPATH="/var/cache/pbuilder/$NAME/base.cow/"
 DISTRIBUTION="$DIST"
 BUILDRESULT="/var/cache/pbuilder/$NAME/result/"
 APTCACHE="/var/cache/pbuilder/$NAME/aptcache/"
