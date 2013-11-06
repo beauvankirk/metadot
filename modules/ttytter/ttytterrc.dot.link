@@ -3,4 +3,4 @@ verify=1
 dostream=1
 vcheck=1
 ansi=1
-readline=1
+#readline=1
