@@ -56,15 +56,15 @@ Also,
 - file structure is preserved: file apps/scripts.link is linked as $HOME/apps/scripts.
 - nested structures are allowed: config.dot/awesome.link is linked as $HOME/.config/awesome
 
-Todo
+TODO
 ----
 
+- Split: metadot, dotfiles and modules should be separate repositories.
+- Profile: automatic $PATH inclusion for installed script repositories.
 - Check if module is correctly installed.
 - Track loaded modules.
-- Make modules as git submodules.
-- Module descriptions.
+- Module descriptions and dependencies.
 - Module unloading and restoration.
-- Module dependency.
 - Integration with scripts project.
 - More file types:
   - .sample: copied if no origin file exists
