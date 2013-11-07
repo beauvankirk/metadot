@@ -66,4 +66,4 @@ INCLUDE .remind/cookbook/
 #INCLUDE .remind/index.rem
 
 # Calendar data imported from Sunbird
-#INCLUDE .remind/sunbidr
+#INCLUDE .remind/sunbird
