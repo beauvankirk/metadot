@@ -21,7 +21,8 @@ set go+=n
 " Thanks to https://github.com/laurentb/public-dotfiles/blob/master/desktop/.pentadactyl/main.penta
 command yt :yank :echo document.title.replace(/ - Firefox$/, '');
 
-" Open a new tab
+" Open a new tab or the homepage
 map e :tabopen about:newtab <CR>
+map h gH
 
 " vim: set ft=pentadactyl:
