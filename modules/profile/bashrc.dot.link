@@ -1,6 +1,0 @@
-#
-# Bash rc file
-#
-
-# Load the profile
-source $HOME/.profile

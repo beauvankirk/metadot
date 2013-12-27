@@ -1,6 +1,0 @@
-[Default Applications]
-inode/symlink=gvim.desktop
-text/plain=gvim.desktop;
-
-[Added Associations]
-inode/symlink=gvim.desktop;

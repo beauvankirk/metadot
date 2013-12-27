@@ -1,6 +1,0 @@
-# Log
-logfile = .unison/unison.log
-
-# Automatically accept default (nonconflicting) actions
-auto = true
-addversionno = true
