@@ -76,6 +76,11 @@ Also,
 - file structure is preserved: file apps/scripts.link is linked as $HOME/apps/scripts.
 - nested structures are allowed: config.dot/awesome.link is linked as $HOME/.config/awesome
 
+Contact
+-------
+
+Comments and patches: rhatto at riseup.net
+
 TODO
 ----
 
