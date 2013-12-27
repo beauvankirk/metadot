@@ -80,7 +80,9 @@ elif [ "$OPT" == "ls" ]; then
 elif [ "$OPT" == "version" ]; then
   ( cd $DOT && git log -n 1 )
 elif [ "$OPT" == "update" ]; then
-  ( cd $DOT && git pull origin master && git submodule update --init )
+  if [ -d "$DOT/.git" ]; then
+    ( cd $DOT && git pull origin master && git submodule update --init )
+  fi
 elif [ "$OPT" == "backup" ]; then
   shift
   metadot_backup $1

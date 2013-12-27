@@ -1,20 +1,34 @@
-Metadot: a dotfile management system
-====================================
+Metadot: modular dotfile management system
+==========================================
 
-Inspired by https://github.com/holman/dotfiles
+Metadot allows you to easilly manage and reuse existing dotfiles repositories
+by simply cloning then to your `~/.dotfiles/modules` and renaming a few files.
+
+By being modular, it's possible to create modules for specific applications
+(vim, mutt, emcas, git, etc). By using git submodules, one can even create her
+own dotfile bundle.
+
+Inspired by [holman does dotfiles](https://github.com/holman/dotfiles) and many
+other initiatives but with a modular design to ease dotfile sharing as the
+`metadot` code is split from the dotfile folder.
 
 Instalation
 -----------
 
 Get the code:
 
-    git clone --recursive git://URL/dotfiles.git .dotfiles
+    git clone --recursive git://git.sarava.org/metadot.git
 
-Then add .dotfiles folder to your path or replace your dotfiles with
+Save the metadot repository anywhere but make sure it's available in your `$PATH`.
+Then get some modules. You can get the whole standard module bundle with:
 
-    ~/.dotfiles/metadot load profile
+    git clone --recursive git://git.sarava.org/rhatto/dotfiles.git ~/.dotfiles
 
-A backup will be saved.
+This bundle will hardly suit all your needs. You can fetch individual modules or even
+start your own bundle:
+
+    mkdir -p ~/.dotfiles/modules
+    git clone --recursive git://git.sarava.org/rhatto/dotfiles/vim.git ~/.dotfiles/modules/vim
 
 Usage
 -----
@@ -31,12 +45,18 @@ Load all modules:
 
     metadot load --all
 
+Update a module bundle:
+
+    metadot update
+
+Backups are made whenever a module is loaded.
+
 Layout
 ------
 
 - ~/.dotfiles: where all dotfiles modules are stored
 - ~/.backups: backups of old config files
-- ~/.custom: your custom configuration where you can override parameters
+- ~/.custom: some modules use this folder where custom configuration can override default parameters
 
 Module format
 -------------
