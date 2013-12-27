@@ -1,9 +1,0 @@
-# As we are handling with config files, it might be better to
-# use a paranoid config by default.
-#
-# Comment that while in development.
-*
-
-# Pay special attention to that ones
-modules/vim/vim.dot.link/.VimballRecord
-modules/vim/vim.dot.link/.netrwhist

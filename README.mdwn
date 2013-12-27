@@ -56,7 +56,7 @@ Layout
 
 - ~/.dotfiles: where all dotfiles modules are stored
 - ~/.backups: backups of old config files
-- ~/.custom: some modules use this folder where custom configuration can override default parameters
+- ~/.custom: some modules use this folder for custom configuration overriding default parameters
 
 Module format
 -------------
@@ -79,13 +79,10 @@ Also,
 TODO
 ----
 
-- Split: metadot, dotfiles and modules should be separate repositories.
-- Profile: automatic $PATH inclusion for installed script repositories.
 - Check if module is correctly installed.
 - Track loaded modules.
 - Module descriptions and dependencies.
 - Module unloading and restoration.
-- Integration with scripts project.
 - More file types:
   - .sample: copied if no origin file exists
   - .sh: added to the profile
