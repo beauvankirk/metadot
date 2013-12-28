@@ -8,27 +8,39 @@ By being modular, it's possible to create modules for specific applications
 (vim, mutt, emcas, git, etc). By using git submodules, one can even create her
 own dotfile bundle.
 
-Inspired by [holman does dotfiles](https://github.com/holman/dotfiles) and many
-other initiatives but with a modular design to ease dotfile sharing as the
-`metadot` code is split from the dotfile folder.
+It was inspired by [holman does dotfiles](https://github.com/holman/dotfiles)
+and many other initiatives but with a modular design to ease dotfile sharing as
+the `metadot` code is split from the dotfile folder.
 
 Instalation
 -----------
 
 Get the code:
 
-    git clone --recursive git://git.sarava.org/metadot.git
+    git clone git://git.sarava.org/metadot.git
 
 Save the metadot repository anywhere but make sure it's available in your `$PATH`.
-Then get some modules. You can get the whole standard module bundle with:
+Then get some modules. You can get the whole standard module bundle with
 
-    git clone --recursive git://git.sarava.org/rhatto/dotfiles.git ~/.dotfiles
+    metadot clone git://git.sarava.org/rhatto/dotfiles.git
 
-This bundle will hardly suit all your needs. You can fetch individual modules or even
-start your own bundle:
+Modules names as `dotfiles` have a special meaning and are handled like bundles
+and are cloned directly as `~/.dotfiles`.
 
-    mkdir -p ~/.dotfiles/modules
-    git clone --recursive git://git.sarava.org/rhatto/dotfiles/vim.git ~/.dotfiles/modules/vim
+Third-party bundled modules will hardly suit your needs, so you can fetch
+individual modules:
+
+    metadot clone git://git.sarava.org/rhatto/dotfiles/vim.git
+
+Or even start your own:
+
+    metadot create vim
+
+In both cases your `vim` module will be available at `~/.dotfiles/modules/vim`.
+
+You can use just one bundle at a time. While you can mixed a bundle with
+individual modules, it's more sane to just start your own bundle and keep
+modules as git submodules.
 
 Usage
 -----
@@ -45,7 +57,7 @@ Load all modules:
 
     metadot load --all
 
-Update a module bundle:
+Update a module bundle or all individual modules:
 
     metadot update
 

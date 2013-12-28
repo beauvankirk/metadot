@@ -81,11 +81,40 @@ elif [ "$OPT" == "version" ]; then
   ( cd $DOT && git log -n 1 )
 elif [ "$OPT" == "update" ]; then
   if [ -d "$DOT/.git" ]; then
-    ( cd $DOT && git pull origin master && git submodule update --init )
+    ( cd $DOT && git pull origin master && git submodule update --init --recursive )
+  else
+    for module in `ls $MODULES`; do
+      ( cd $MODULES/$module && git pull origin master && git submodule update --init --recursive )
+    done
   fi
 elif [ "$OPT" == "backup" ]; then
   shift
   metadot_backup $1
+elif [ "$OPT" == "clone" ]; then
+  shift
+  if [ "`basename $1 .git`" == "dotfiles" ]; then
+    metadot_backup $DOT
+    git clone --recursive $1 $DOT
+    echo "Backups saved at $BACKUPS."
+  else
+    mkdir -p $MODULES
+    git clone --recursive $1 $MODULES/`basename $1 .git`
+  fi
+elif [ "$OPT" == "create" ]; then
+  shift
+  mkdir -p $MODULES/$1
+  (
+    cd $MODULES/$1
+    git init
+
+    echo "# $1 dotfile module"                                        > README.mdwn
+    echo ""                                                          >> README.mdwn
+    echo "This is the repository for $1 configuration."              >> README.mdwn
+    echo "More information at https://git.sarava.org/?p=metadot.git" >> README.mdwn
+
+    git add .
+  )
+  echo "Metadot skeleton module $1 created at $MODULES/$1"
 elif [ "$OPT" == "load" ]; then
   shift
 
