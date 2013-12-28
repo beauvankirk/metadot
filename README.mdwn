@@ -1,5 +1,5 @@
-Metadot: modular dotfile management system
-==========================================
+Metadot: modular dotfile management
+===================================
 
 Metadot allows you to easilly manage and reuse existing dotfiles repositories
 by simply cloning then to your `~/.dotfiles/modules` and renaming a few files.
