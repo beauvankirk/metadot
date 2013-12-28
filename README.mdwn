@@ -66,9 +66,9 @@ Backups are made whenever a module is loaded.
 Layout
 ------
 
-- ~/.dotfiles: where all dotfiles modules are stored
-- ~/.backups: backups of old config files
-- ~/.custom: some modules use this folder for custom configuration overriding default parameters
+- `~/.dotfiles`: where all dotfiles modules are stored
+- `~/.backups`: backups of old config files
+- `~/.custom`: some modules use this folder for custom configuration overriding default parameters
 
 Module format
 -------------
@@ -79,14 +79,14 @@ Modules rest at ~/.dotfiles/modules and can be git submodules. File format is:
 
 Which means files
 
-- with a .link extension are linked at $HOME.
-- with a .dot.link extension are converted to a dotfile: vimrc.dot.link is linked as ~/.vimrc.
+- with a `.link` extension are linked at `$HOME`.
+- with a `.dot.link` extension are converted to a dotfile: `vimrc.dot.link` is linked as `~/.vimrc`.
 - with other extensions are ignored.
 
 Also,
 
-- file structure is preserved: file apps/scripts.link is linked as $HOME/apps/scripts.
-- nested structures are allowed: config.dot/awesome.link is linked as $HOME/.config/awesome
+- file structure is preserved: `apps/scripts.link` is linked as `$HOME/apps/scripts`.
+- nested structures are allowed: `config.dot/awesome.link` is linked as `$HOME/.config/awesome`.
 
 Contact
 -------
