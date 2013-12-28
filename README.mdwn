@@ -10,7 +10,7 @@ own dotfile bundle.
 
 It was inspired by [holman does dotfiles](https://github.com/holman/dotfiles)
 and many other initiatives but with a modular design to ease dotfile sharing as
-the `metadot` code is split from the dotfile folder.
+the `metadot` code is split from the dotfiles' folder.
 
 Instalation
 -----------
@@ -27,8 +27,8 @@ Then get some modules. You can get the whole standard module bundle with
 Modules names as `dotfiles` have a special meaning and are handled like bundles
 and are cloned directly as `~/.dotfiles`.
 
-Third-party bundled modules will hardly suit your needs, so you can fetch
-individual modules:
+Third-party bundles will hardly suit your needs, so you can fetch individual
+modules:
 
     metadot clone git://git.sarava.org/rhatto/dotfiles/vim.git
 
@@ -96,8 +96,8 @@ Comments and patches: rhatto at riseup.net
 TODO
 ----
 
-- Check if module is correctly installed.
-- Track loaded modules.
+- Add action to include files and folders into a module.
+- Track loaded modules and check if they're correctly installed.
 - Module descriptions and dependencies.
 - Module unloading and restoration.
 - More file types:

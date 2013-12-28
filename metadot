@@ -112,6 +112,12 @@ elif [ "$OPT" == "create" ]; then
     echo "This is the repository for $1 configuration."              >> README.mdwn
     echo "More information at https://git.sarava.org/?p=metadot.git" >> README.mdwn
 
+    echo "# As we are handling with config files, it might be better to"  > .gitignore
+    echo "# use a paranoid config by default."                           >> .gitignore
+    echo "#"                                                             >> .gitignore
+    echo "# Comment that while in development."                          >> .gitignore
+    echo '*'                                                             >> .gitignore
+
     git add .
   )
   echo "Metadot skeleton module $1 created at $MODULES/$1"
