@@ -20,6 +20,8 @@ Get the code:
     git clone git://git.sarava.org/metadot.git
 
 Save the metadot repository anywhere but make sure it's available in your `$PATH`.
+I'm my config I use `~/apps/metadot`.
+
 Then get some modules. You can get the whole standard module bundle with
 
     metadot clone git://git.sarava.org/rhatto/dotfiles.git
