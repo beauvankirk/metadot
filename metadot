@@ -18,17 +18,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+# Set real home folder
+if [ ! -z "$PREFIX" ]; then
+  if [ ! -d "$PREFIX" ]; then
+    echo "Destination folder not found: $PREFIX"
+  else
+    DEST="$PREFIX"
+  fi
+else
+  DEST="$HOME"
+fi
+
 # Parameters
 OPT="$1"
 DATE="`date +%Y%m%d%I%M%S`"
 BASENAME="`basename $0`"
-DOT="$HOME/.dotfiles"
+DOT="$DEST/.dotfiles"
 MODULES="$DOT/modules"
-BACKUPS="$HOME/.backups/$DATE"
+BACKUPS="$DEST/.backups/$DATE"
 
 # Backup a file
 function metadot_backup {
-  local file="$HOME/$1"
+  local file="$DEST/$1"
   
   if [ -e "$file" ] || [ -h "$file" ]; then
     local folder="$BACKUPS/`dirname $1`"
@@ -69,8 +80,8 @@ function metadot_load {
       fi
 
       if [ "$dirname" != "." ]; then
-        #echo "Creating $HOME/$dirname..."
-        mkdir -p $HOME/$dirname
+        #echo "Creating $DEST/$dirname..."
+        mkdir -p $DEST/$dirname
       else
         dirname=""
       fi
@@ -78,7 +89,7 @@ function metadot_load {
       metadot_backup "$dirname/$destname"
 
       #echo "Installing symlink $dirname/$destname..."
-      ln -s $MODULES/$module/$file $HOME/$dirname/$destname
+      ln -s $MODULES/$module/$file $DEST/$dirname/$destname
 
     done
   else
