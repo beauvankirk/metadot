@@ -42,7 +42,7 @@ function metadot_backup {
 # Find contents of a module
 function metadot_find {
   local module="$1"
-  ( cd $MODULES/$module && find -name '*.link' -or -name '*.dot.link' ) | sed -e 's|./||'
+  ( cd $MODULES/$module && find -name '*.link' -or -name '*.dot.link' ) | grep -v '.git/modules' | sed -e 's|./||'
 }
 
 # Load a module
