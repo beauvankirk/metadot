@@ -17,7 +17,12 @@ Instalation
 
 Get the code:
 
-    git clone git://git.sarava.org/metadot.git
+    git clone git://git.sarava.org/metadot.git && cd metadot
+
+Then check the source integrity of the latest release:
+
+    tag="`git describe --abbrev=0 --tags`"
+    git tag -v $tag && git checkout $tag
 
 Save the metadot repository anywhere but make sure it's available in your `$PATH`.
 I'm my config I use `~/apps/metadot`.
@@ -27,7 +32,10 @@ Then get some modules. You can get the whole standard module bundle with
     metadot clone git://git.sarava.org/rhatto/dotfiles.git
 
 Modules names as `dotfiles` have a special meaning and are handled like bundles
-and are cloned directly as `~/.dotfiles`.
+and are cloned directly as `~/.dotfiles`. After cloning, you can check the current
+dotfiles revision using
+
+    metadot version
 
 Third-party bundles will hardly suit your needs, so you can fetch individual
 modules:
