@@ -5,7 +5,7 @@ Metadot allows you to easilly manage and reuse existing dotfiles repositories
 by simply cloning then to your `~/.dotfiles/modules` and renaming a few files.
 
 By being modular, it's possible to create modules for specific applications
-(vim, mutt, emcas, git, etc). By using git submodules or subtrees, one can even
+(vim, mutt, emacs, git, etc). By using git submodules or subtrees, one can even
 create her own dotfile bundle.
 
 It was inspired by [holman does dotfiles](https://github.com/holman/dotfiles)
