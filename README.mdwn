@@ -31,6 +31,10 @@ Then get some modules. You can get the whole standard module bundle with
 
     metadot clone git://git.sarava.org/rhatto/dotfiles.git
 
+Or simply using
+
+    metadot clone default
+
 Modules names as `dotfiles` have a special meaning and are handled like bundles
 and are cloned directly as `~/.dotfiles`. After cloning, you can check the current
 dotfiles revision using

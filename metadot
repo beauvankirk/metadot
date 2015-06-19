@@ -36,6 +36,7 @@ BASENAME="`basename $0`"
 DOT="$DEST/.dotfiles"
 MODULES="$DOT/modules"
 BACKUPS="$DEST/.backups/$DATE"
+DEFAULT="git://git.sarava.org/rhatto/dotfiles.git"
 
 # Backup a file
 function metadot_backup {
@@ -118,7 +119,11 @@ elif [ "$OPT" == "backup" ]; then
   metadot_backup $1
 elif [ "$OPT" == "clone" ]; then
   shift
-  if [ "`basename $1 .git`" == "dotfiles" ]; then
+  if [ "$1" == "default" ]; then
+    metadot_backup $DOT
+    git clone --recursive $DEFAULT $DOT
+    echo "Backups saved at $BACKUPS."
+  elif [ "`basename $1 .git`" == "dotfiles" ]; then
     metadot_backup $DOT
     git clone --recursive $1 $DOT
     echo "Backups saved at $BACKUPS."
