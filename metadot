@@ -138,10 +138,10 @@ elif [ "$OPT" == "create" ]; then
     cd $MODULES/$1
     git init
 
-    echo "# $1 dotfile module"                                        > README.mdwn
-    echo ""                                                          >> README.mdwn
-    echo "This is the repository for $1 configuration."              >> README.mdwn
-    echo "More information at https://git.sarava.org/?p=metadot.git" >> README.mdwn
+    echo "# $1 dotfile module"                                     > README.md
+    echo ""                                                       >> README.md
+    echo "This is the repository for $1 configuration."           >> README.md
+    echo "More information at https://git.sarava.org/metadot.git" >> README.md
 
     echo "# As we are handling with config files, it might be better to"  > .gitignore
     echo "# use a paranoid config by default."                           >> .gitignore
