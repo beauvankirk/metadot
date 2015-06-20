@@ -143,6 +143,11 @@ elif [ "$OPT" == "create" ]; then
     echo "This is the repository for $1 configuration."           >> README.md
     echo "More information at https://git.sarava.org/metadot.git" >> README.md
 
+    echo "TODO"                > TODO.md
+    echo "===="               >> TODO.md
+    echo ""                   >> TODO.md
+    echo "* Nothing here? :P" >> TODO.md
+
     echo "# As we are handling with config files, it might be better to"  > .gitignore
     echo "# use a paranoid config by default."                           >> .gitignore
     echo "#"                                                             >> .gitignore
