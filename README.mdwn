@@ -102,6 +102,14 @@ Also,
 - file structure is preserved: `apps/scripts.link` is linked as `$HOME/apps/scripts`.
 - nested structures are allowed: `config.dot/awesome.link` is linked as `$HOME/.config/awesome`.
 
+See also
+--------
+
+* http://dotshare.it
+* http://dotfiles.org
+* https://dotfiles.github.io
+* https://wiki.archlinux.org/index.php/Dotfiles
+
 Contact
 -------
 
