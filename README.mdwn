@@ -17,7 +17,7 @@ Instalation
 
 Get the code:
 
-    git clone git://git.sarava.org/metadot.git && cd metadot
+    git clone git://git.fluxo.info/metadot.git && cd metadot
 
 Then check the source integrity of the latest release:
 
@@ -29,7 +29,7 @@ I'm my config I use `~/apps/metadot`.
 
 Then get some modules. You can get the whole standard module bundle with
 
-    metadot clone git://git.sarava.org/rhatto/dotfiles.git
+    metadot clone git://git.fluxo.info/rhatto/dotfiles.git
 
 Or simply using
 
@@ -44,7 +44,7 @@ dotfiles revision using
 Third-party bundles will hardly suit your needs, so you can fetch individual
 modules:
 
-    metadot clone git://git.sarava.org/rhatto/dotfiles/vim.git
+    metadot clone git://git.fluxo.info/rhatto/dotfiles/vim.git
 
 Or even start your own:
 

@@ -36,7 +36,7 @@ BASENAME="`basename $0`"
 DOT="$DEST/.dotfiles"
 MODULES="$DOT/modules"
 BACKUPS="$DEST/.backups/$DATE"
-DEFAULT="git://git.sarava.org/rhatto/dotfiles.git"
+DEFAULT="git://git.fluxo.info/rhatto/dotfiles.git"
 
 # Backup a file
 function metadot_backup {
@@ -141,7 +141,7 @@ elif [ "$OPT" == "create" ]; then
     echo "# $1 dotfile module"                                     > README.md
     echo ""                                                       >> README.md
     echo "This is the repository for $1 configuration."           >> README.md
-    echo "More information at https://git.sarava.org/metadot.git" >> README.md
+    echo "More information at https://git.fluxo.info/metadot.git" >> README.md
 
     echo "TODO"                > TODO.md
     echo "===="               >> TODO.md
