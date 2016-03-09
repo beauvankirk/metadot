@@ -1,6 +1,7 @@
 TODO
 ====
 
+- Find dead symlinks at $HOME pointing to dotfiles.
 - Per-distro package dependency listing/handling.
 - Check if modules are correctly installed.
 - Module descriptions and dependencies.
