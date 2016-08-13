@@ -138,10 +138,10 @@ elif [ "$OPT" == "create" ]; then
     cd $MODULES/$1
     git init
 
-    echo "# $1 dotfile module"                                     > README.md
-    echo ""                                                       >> README.md
-    echo "This is the repository for $1 configuration."           >> README.md
-    echo "More information at https://git.fluxo.info/metadot.git" >> README.md
+    echo "# $1 dotfile module"                                 > README.md
+    echo ""                                                   >> README.md
+    echo "This is the repository for $1 configuration."       >> README.md
+    echo "More information at https://git.fluxo.info/metadot" >> README.md
 
     echo "TODO"                > TODO.md
     echo "===="               >> TODO.md
