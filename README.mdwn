@@ -17,7 +17,7 @@ Instalation
 
 Get the code:
 
-    git clone git://git.fluxo.info/metadot.git && cd metadot
+    git clone https://git.fluxo.info/metadot && cd metadot
 
 Then check the source integrity of the latest release:
 

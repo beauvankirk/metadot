@@ -98,6 +98,25 @@ function metadot_load {
   fi
 }
 
+# Load a module
+function metadot_deps {
+  local module="$1"
+  local destname
+  local dirname
+
+  if [ -d "$MODULES/$module" ]; then
+    echo "Resolving dependencies for $module.."
+
+    if [ -e "/etc/debian_version" ] && [ -e "$MODULES/$module/dependencies/debian" ]; then
+      deps="`grep -v '^#' $MODULES/$module/dependencies/debian | xargs`"
+      sudo apt install $deps
+    fi
+
+  else
+    echo "No such module $module"
+  fi
+}
+
 # Parsing.
 if [ -z "$OPT" ]; then
   echo "usage: $BASENAME <option> [arguments]"
@@ -157,7 +176,7 @@ elif [ "$OPT" == "create" ]; then
     git add .
   )
   echo "Metadot skeleton module $1 created at $MODULES/$1"
-elif [ "$OPT" == "load" ]; then
+elif [ "$OPT" == "load" ] || [ "$OPT" == "deps" ]; then
   shift
 
   if [ -z "$1" ]; then
@@ -171,9 +190,12 @@ elif [ "$OPT" == "load" ]; then
   fi
 
   for module in $modules; do
-    metadot_load $module
+    metadot_$OPT $module
   done
-  echo "Backups saved at $BACKUPS."
+
+  if [ "$OPT" == "load" ]; then
+    echo "Backups saved at $BACKUPS."
+  fi
 elif [ "$OPT" == "list" ]; then
   # Complete, slow version
   #find $HOME -lname '*.dotfiles*' -exec ls -la {} | \
