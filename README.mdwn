@@ -29,7 +29,7 @@ I'm my config I use `~/apps/metadot`.
 
 Then get some modules. You can get the whole standard module bundle with
 
-    metadot clone git://git.fluxo.info/rhatto/dotfiles.git
+    metadot clone https://git.fluxo.info/rhatto/dotfiles
 
 Or simply using
 
@@ -44,7 +44,7 @@ dotfiles revision using
 Third-party bundles will hardly suit your needs, so you can fetch individual
 modules:
 
-    metadot clone git://git.fluxo.info/rhatto/dotfiles/vim.git
+    metadot clone https://git.fluxo.info/rhatto/dotfiles/vim
 
 Or even start your own:
 
