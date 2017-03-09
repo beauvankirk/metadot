@@ -124,7 +124,7 @@ if [ -z "$OPT" ]; then
 elif [ "$OPT" == "ls" ]; then
   ls -1 $MODULES
 elif [ "$OPT" == "version" ]; then
-  ( cd $DOT && git log -n 1 )
+  ( cd $DOT && git log --show-signature -n 1 )
 elif [ "$OPT" == "update" ]; then
   if [ -d "$DOT/.git" ]; then
     ( cd $DOT && git pull origin master && git submodule update --init --recursive )
