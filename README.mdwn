@@ -21,7 +21,7 @@ Get the code:
 
 Then check the source integrity of the latest release:
 
-    git log --show-signature -n 1
+    git verify-commit HEAD
 
 Save the metadot repository anywhere but make sure it's available in your `$PATH`.
 I'm my config I use `~/apps/metadot`.
