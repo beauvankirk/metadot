@@ -109,7 +109,7 @@ function metadot_deps {
 
     if [ -e "/etc/debian_version" ] && [ -e "$MODULES/$module/dependencies/debian" ]; then
       deps="`grep -v '^#' $MODULES/$module/dependencies/debian | xargs`"
-      sudo apt-get install -y $deps
+      LC_ALL=C DEBIAN_FRONTEND=noninteractive sudo apt-get install -y $deps
     fi
 
   else
