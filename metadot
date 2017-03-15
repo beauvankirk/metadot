@@ -196,6 +196,9 @@ elif [ "$OPT" == "load" ] || [ "$OPT" == "deps" ]; then
   if [ "$OPT" == "load" ]; then
     echo "Backups saved at $BACKUPS."
   fi
+elif [ "$OPT" == "load-bundle" ] || [ "$OPT" == "deps-bundle" ]; then
+  shift
+  # TODO
 elif [ "$OPT" == "list" ]; then
   # Complete, slow version
   #find $HOME -lname '*.dotfiles*' -exec ls -la {} | \
