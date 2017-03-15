@@ -17,11 +17,11 @@ Instalation
 
 Get the code:
 
-    git clone https://git.fluxo.info/metadot && cd metadot
+    git clone https://git.fluxo.info/metadot
 
 Then check the source integrity of the latest release:
 
-    git verify-commit HEAD
+    /usr/bin/git -C metadot verify-commit HEAD
 
 Save the metadot repository anywhere but make sure it's available in your `$PATH`.
 I'm my config I use `~/apps/metadot`.
