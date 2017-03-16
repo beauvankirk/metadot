@@ -233,11 +233,11 @@ function metadot_process_bundle {
   fi
 
   cat $DOT/bundles/$bundle | while read item; do
-    option="`echo $OPT | sed -e 's|-bundle||g'`"
-
     if echo $item | grep -q "^bundles/"; then
+      option="$OPT"
       dependency="`echo $item | sed -e 's|bundles/||g'`"
     elif echo $item | grep -q "^modules/"; then
+      option="`echo $OPT | sed -e 's|-bundle||g'`"
       dependency="`echo $item | sed -e 's|modules/||g'`"
     else
       echo "Skipping invalid item $item..."
