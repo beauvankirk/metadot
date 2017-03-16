@@ -33,10 +33,11 @@ fi
 OPT="$1"
 DATE="`date +%Y%m%d%I%M%S`"
 BASENAME="`basename $0`"
+DIRNAME="`dirname $0`"
 DOT="$DEST/.dotfiles"
 MODULES="$DOT/modules"
 BACKUPS="$DEST/.backups/$DATE"
-DEFAULT="git://git.fluxo.info/rhatto/dotfiles.git"
+DEFAULT="https://git.fluxo.info/rhatto/dotfiles"
 
 # Backup a file
 function metadot_backup {
@@ -117,15 +118,36 @@ function metadot_deps {
   fi
 }
 
-# Parsing.
-if [ -z "$OPT" ]; then
-  echo "usage: $BASENAME <option> [arguments]"
-  exit 1
-elif [ "$OPT" == "ls" ]; then
-  ls -1 $MODULES
-elif [ "$OPT" == "version" ]; then
-  ( cd $DOT && git log --show-signature -n 1 )
-elif [ "$OPT" == "update" ]; then
+# Create a new module
+function metadot_create {
+  mkdir -p $MODULES/$1
+  (
+    cd $MODULES/$1
+    git init
+
+    echo "# $1 dotfile module"                                 > README.md
+    echo ""                                                   >> README.md
+    echo "This is the repository for $1 configuration."       >> README.md
+    echo "More information at https://git.fluxo.info/metadot" >> README.md
+
+    #echo "TODO"                > TODO.md
+    #echo "===="               >> TODO.md
+    #echo ""                   >> TODO.md
+    #echo "* Nothing here? :P" >> TODO.md
+
+    echo "# As we are handling with config files, it might be better to"  > .gitignore
+    echo "# use a paranoid config by default."                           >> .gitignore
+    echo "#"                                                             >> .gitignore
+    echo "# Comment that while in development."                          >> .gitignore
+    echo '*'                                                             >> .gitignore
+
+    git add .
+  )
+  echo "Metadot skeleton module $1 created at $MODULES/$1"
+}
+
+# Update your dotfiles
+function metadot_update {
   if [ -d "$DOT/.git" ]; then
     ( cd $DOT && git pull origin master && git submodule update --init --recursive )
   else
@@ -133,10 +155,21 @@ elif [ "$OPT" == "update" ]; then
       ( cd $MODULES/$module && git pull origin master && git submodule update --init --recursive )
     done
   fi
-elif [ "$OPT" == "backup" ]; then
-  shift
-  metadot_backup $1
-elif [ "$OPT" == "clone" ]; then
+}
+
+# Basic usage
+function metadot_usage {
+  echo "usage: $BASENAME <option> [arguments]"
+  exit 1
+}
+
+# List modules
+function metadot_ls {
+  ls -1 $MODULES
+}
+
+# Clone a module
+function metadot_clone {
   shift
   if [ "$1" == "default" ]; then
     metadot_backup $DOT
@@ -150,37 +183,22 @@ elif [ "$OPT" == "clone" ]; then
     mkdir -p $MODULES
     git clone --recursive $1 $MODULES/`basename $1 .git`
   fi
-elif [ "$OPT" == "create" ]; then
-  shift
-  mkdir -p $MODULES/$1
-  (
-    cd $MODULES/$1
-    git init
+}
 
-    echo "# $1 dotfile module"                                 > README.md
-    echo ""                                                   >> README.md
-    echo "This is the repository for $1 configuration."       >> README.md
-    echo "More information at https://git.fluxo.info/metadot" >> README.md
+# List installed modules
+function metadot_installed {
+  # Complete, slow version
+  #find $HOME -lname '*.dotfiles*' -exec ls -la {} | \
+  #grep .dotfiles/modules | sed -e 's|.*.dotfiles/||g' | cut -d '/' -f 2 | sort | uniq
 
-    echo "TODO"                > TODO.md
-    echo "===="               >> TODO.md
-    echo ""                   >> TODO.md
-    echo "* Nothing here? :P" >> TODO.md
+  # Simple, incomplete version
+  ls -ag $HOME/ | grep .dotfiles/modules | sed -e 's|.*.dotfiles/||g' | cut -d '/' -f 2 | sort | uniq
+}
 
-    echo "# As we are handling with config files, it might be better to"  > .gitignore
-    echo "# use a paranoid config by default."                           >> .gitignore
-    echo "#"                                                             >> .gitignore
-    echo "# Comment that while in development."                          >> .gitignore
-    echo '*'                                                             >> .gitignore
-
-    git add .
-  )
-  echo "Metadot skeleton module $1 created at $MODULES/$1"
-elif [ "$OPT" == "load" ] || [ "$OPT" == "deps" ]; then
-  shift
-
+# Process modules
+function metadot_process_modules {
   if [ -z "$1" ]; then
-    echo "usage: $BASENAME load [module(s)|--all]"
+    echo "usage: $BASENAME $OPT [module(s)|--all]"
   fi
 
   if [ "$1" == "--all" ]; then
@@ -196,14 +214,62 @@ elif [ "$OPT" == "load" ] || [ "$OPT" == "deps" ]; then
   if [ "$OPT" == "load" ]; then
     echo "Backups saved at $BACKUPS."
   fi
+}
+
+# Process bundle
+function metadot_process_bundle {
+  local bundle="$1"
+  local dependency
+  local option
+
+  if [ -z "$bundle" ]; then
+    echo "usage: $BASENAME $OPT [bundle]"
+  fi
+
+  if [ ! -e "$DOT/bundles/$bundle" ]; then
+    echo "$BASENAME: bundle not found: $bundle"
+    exit 1
+  fi
+
+  cat $DOT/bundles/bundle | while read item; do
+    option="`echo $OPT | sed -e 's|-bundle||g'`"
+
+    if grep -q "^bundles/" $item; then
+      dependency="`echo $item | sed -e 's|bundles/||g'`"
+    elif grep -q "^modules/" $item; then
+      dependency="`echo $item | sed -e 's|modules/||g'`"
+    else
+      echo "Skipping invalid item $item..."
+      continue
+    fi
+
+    $DIRNAME/$BASENAME $option $dependency
+  done
+}
+
+# Parsing
+if [ -z "$OPT" ]; then
+  metadot_usage
+elif [ "$OPT" == "ls" ]; then
+  metadot_ls
+elif [ "$OPT" == "version" ]; then
+  ( cd $DOT && git log --show-signature -n 1 )
+elif [ "$OPT" == "update" ]; then
+  metadot_update
+elif [ "$OPT" == "backup" ]; then
+  shift
+  metadot_backup $1
+elif [ "$OPT" == "clone" ]; then
+  metadot_clone $1
+elif [ "$OPT" == "create" ]; then
+  shift
+  metadot_create $1
+elif [ "$OPT" == "load" ] || [ "$OPT" == "deps" ]; then
+  shift
+  metadot_process_modules $*
 elif [ "$OPT" == "load-bundle" ] || [ "$OPT" == "deps-bundle" ]; then
   shift
-  # TODO
-elif [ "$OPT" == "list" ]; then
-  # Complete, slow version
-  #find $HOME -lname '*.dotfiles*' -exec ls -la {} | \
-  #grep .dotfiles/modules | sed -e 's|.*.dotfiles/||g' | cut -d '/' -f 2 | sort | uniq
-
-  # Simpler version
-  ls -ag $HOME/ | grep .dotfiles/modules | sed -e 's|.*.dotfiles/||g' | cut -d '/' -f 2 | sort | uniq
+  metadot_process_bundle $*
+elif [ "$OPT" == "installed" ]; then
+  metadot_installed
 fi
