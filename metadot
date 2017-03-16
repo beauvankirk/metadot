@@ -231,7 +231,7 @@ function metadot_process_bundle {
     exit 1
   fi
 
-  cat $DOT/bundles/bundle | while read item; do
+  cat $DOT/bundles/$bundle | while read item; do
     option="`echo $OPT | sed -e 's|-bundle||g'`"
 
     if grep -q "^bundles/" $item; then
