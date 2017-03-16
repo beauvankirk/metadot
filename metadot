@@ -235,9 +235,9 @@ function metadot_process_bundle {
   cat $DOT/bundles/$bundle | while read item; do
     option="`echo $OPT | sed -e 's|-bundle||g'`"
 
-    if grep -q "^bundles/" $item; then
+    if echo $item | grep -q "^bundles/"; then
       dependency="`echo $item | sed -e 's|bundles/||g'`"
-    elif grep -q "^modules/" $item; then
+    elif echo $item | grep -q "^modules/"; then
       dependency="`echo $item | sed -e 's|modules/||g'`"
     else
       echo "Skipping invalid item $item..."
