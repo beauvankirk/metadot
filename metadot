@@ -224,6 +224,7 @@ function metadot_process_bundle {
 
   if [ -z "$bundle" ]; then
     echo "usage: $BASENAME $OPT [bundle]"
+    exit 1
   fi
 
   if [ ! -e "$DOT/bundles/$bundle" ]; then
@@ -247,11 +248,31 @@ function metadot_process_bundle {
   done
 }
 
+# Display bundle contents
+function metadot_ls_bundle {
+  local bundle="$1"
+
+  if [ -z "$bundle" ] && [ -d "$DOT/bundles" ]; then
+    ls $DOT/bundles
+    exit
+  fi
+
+  if [ ! -e "$DOT/bundles/$bundle" ]; then
+    echo "$BASENAME: bundle not found: $bundle"
+    exit 1
+  fi
+
+  cat $DOT/bundles/$bundle
+}
+
 # Parsing
 if [ -z "$OPT" ]; then
   metadot_usage
 elif [ "$OPT" == "ls" ]; then
   metadot_ls
+elif [ "$OPT" == "ls-bundle" ]; then
+  shift
+  metadot_ls_bundle $1
 elif [ "$OPT" == "version" ]; then
   ( cd $DOT && git log --show-signature -n 1 )
 elif [ "$OPT" == "update" ]; then
