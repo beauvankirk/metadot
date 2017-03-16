@@ -272,19 +272,19 @@ elif [ "$OPT" == "ls" ]; then
   metadot_ls
 elif [ "$OPT" == "ls-bundle" ]; then
   shift
-  metadot_ls_bundle $1
+  metadot_ls_bundle $*
 elif [ "$OPT" == "version" ]; then
   ( cd $DOT && git log --show-signature -n 1 )
 elif [ "$OPT" == "update" ]; then
   metadot_update
 elif [ "$OPT" == "backup" ]; then
   shift
-  metadot_backup $1
+  metadot_backup $*
 elif [ "$OPT" == "clone" ]; then
-  metadot_clone $1
+  metadot_clone $*
 elif [ "$OPT" == "create" ]; then
   shift
-  metadot_create $1
+  metadot_create $*
 elif [ "$OPT" == "load" ] || [ "$OPT" == "deps" ]; then
   shift
   metadot_process_modules $*
