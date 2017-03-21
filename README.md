@@ -76,10 +76,6 @@ Load all modules:
 
     metadot load --all
 
-Update a module collection or all individual modules:
-
-    metadot update
-
 Backups are made whenever a module is loaded.
 
 Layout

@@ -39,6 +39,9 @@ MODULES="$DOT/modules"
 BACKUPS="$DEST/.backups/$DATE"
 DEFAULT="https://git.fluxo.info/rhatto/dotfiles"
 
+# Make sure we're running git directly and not any existing wrapper
+GIT="/usr/bin/git"
+
 # Backup a file
 function metadot_backup {
   local file="$DEST/$1"
@@ -146,16 +149,30 @@ function metadot_create {
   echo "Metadot skeleton module $1 created at $MODULES/$1"
 }
 
-# Update your dotfiles
-function metadot_update {
+# Fetch dotfiles
+function metadot_fetch {
   if [ -d "$DOT/.git" ]; then
-    ( cd $DOT && git pull origin master && git submodule update --init --recursive )
-  else
-    for module in `ls $MODULES`; do
-      ( cd $MODULES/$module && git pull origin master && git submodule update --init --recursive )
-    done
+    ( cd $DOT && $GIT fetch --all && $GIT log --show-signature -n 1 --branches=origin/master )
   fi
 }
+
+# Merge
+function metadot_merge {
+  if [ -d "$DOT/.git" ]; then
+    ( cd $DOT && $GIT merge origin/master && $GIT submodule update --init --recursive )
+  fi
+}
+
+# Update your dotfiles
+#function metadot_update {
+#  if [ -d "$DOT/.git" ]; then
+#    ( cd $DOT && git pull origin master && git submodule update --init --recursive )
+#  else
+#    for module in `ls $MODULES`; do
+#      ( cd $MODULES/$module && git pull origin master && git submodule update --init --recursive )
+#    done
+#  fi
+#}
 
 # Basic usage
 function metadot_usage {
@@ -272,7 +289,16 @@ function metadot_ls_bundle {
 
 # Display version
 function metadot_version {
-  ( cd $DOT && git log --show-signature -n 1 )
+  echo "master branch:"
+  echo "=============="
+  echo ""
+  ( cd $DOT && $GIT log --show-signature -n 1 )
+
+  echo ""
+  echo "origin/master branch:"
+  echo "====================="
+  echo ""
+  ( cd $DOT && $GIT log --show-signature -n 1 --branches=origin/master )
 }
 
 # Load a bundle
