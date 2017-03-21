@@ -53,7 +53,7 @@ function metadot_backup {
 }
 
 # Find contents of a module
-function metadot_find {
+function __metadot_find {
   local module="$1"
   ( cd $MODULES/$module && find -name '*.link' -or -name '*.dot.link' ) | grep -v '.git/modules' | sed -e 's|./||'
 }
@@ -68,7 +68,7 @@ function metadot_load {
 
     echo "Loading module $module..."
 
-    for file in `metadot_find $module`; do
+    for file in `__metadot_find $module`; do
       echo "Processing $file..."
 
       # Get the dirname, replacing string.dot with .string
@@ -160,6 +160,11 @@ function metadot_update {
 # Basic usage
 function metadot_usage {
   echo "usage: $BASENAME <option> [arguments]"
+  echo ""
+  echo "available actions:"
+  echo ""
+  grep "^function metadot_" $0 | cut -d ' ' -f 2 | sed -e 's/metadot_/\t/' -e 's/_/-/g' | sort
+  echo ""
   exit 1
 }
 
@@ -196,7 +201,7 @@ function metadot_installed {
 }
 
 # Process modules
-function metadot_process_modules {
+function __metadot_process_modules {
   if [ -z "$1" ]; then
     echo "usage: $BASENAME $OPT [module(s)|--all]"
   fi
@@ -217,7 +222,7 @@ function metadot_process_modules {
 }
 
 # Process bundle
-function metadot_process_bundle {
+function __metadot_process_bundle {
   local bundle="$1"
   local dependency
   local option
@@ -265,8 +270,25 @@ function metadot_ls_bundle {
   cat $DOT/bundles/$bundle
 }
 
+# Display version
+function metadot_version {
+  ( cd $DOT && git log --show-signature -n 1 )
+}
+
+# Load a bundle
+function metadot_load_bundle {
+  __metadot_process_bundle $*
+}
+
+# Process bundle dependencies
+function metadot_deps_bundle {
+  __metadot_process_bundle $*
+}
+
 # Parsing
 if [ -z "$OPT" ]; then
+  metadot_usage
+elif [ "$OPT" == "usage" ]; then
   metadot_usage
 elif [ "$OPT" == "ls" ]; then
   metadot_ls
@@ -274,7 +296,7 @@ elif [ "$OPT" == "ls-bundle" ]; then
   shift
   metadot_ls_bundle $*
 elif [ "$OPT" == "version" ]; then
-  ( cd $DOT && git log --show-signature -n 1 )
+  metadot_version
 elif [ "$OPT" == "update" ]; then
   metadot_update
 elif [ "$OPT" == "backup" ]; then
@@ -287,10 +309,13 @@ elif [ "$OPT" == "create" ]; then
   metadot_create $*
 elif [ "$OPT" == "load" ] || [ "$OPT" == "deps" ]; then
   shift
-  metadot_process_modules $*
-elif [ "$OPT" == "load-bundle" ] || [ "$OPT" == "deps-bundle" ]; then
+  __metadot_process_modules $*
+elif [ "$OPT" == "load-bundle" ]; then
   shift
-  metadot_process_bundle $*
+  metadot_load_bundle $*
+elif [ "$OPT" == "deps-bundle" ]; then
+  shift
+  metadot_deps_bundle $*
 elif [ "$OPT" == "installed" ]; then
   metadot_installed
 fi

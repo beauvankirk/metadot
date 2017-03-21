@@ -6,7 +6,7 @@ by simply cloning then to your `~/.dotfiles/modules` and renaming a few files.
 
 By being modular, it's possible to create modules for specific applications
 (vim, mutt, emacs, git, etc). By using git submodules or subtrees, one can even
-create her own dotfile bundle.
+create her own dotfile collection.
 
 It was inspired by [holman does dotfiles](https://github.com/holman/dotfiles)
 and many other initiatives but with a modular design to ease dotfile sharing as
@@ -23,10 +23,13 @@ Then check the source integrity of the latest release:
 
     /usr/bin/git -C metadot verify-commit HEAD
 
+Note that `/usr/bin/git` is called to avoid any other `git` wrappers or aliases
+you might have available on your shell.
+
 Save the metadot repository anywhere but make sure it's available in your `$PATH`.
 I'm my config I use `~/apps/metadot`.
 
-Then get some modules. You can get the whole standard module bundle with
+Then get some modules. You can get the whole standard module collection with
 
     metadot clone https://git.fluxo.info/rhatto/dotfiles
 
@@ -34,13 +37,13 @@ Or simply using
 
     metadot clone default
 
-Modules names as `dotfiles` have a special meaning and are handled like bundles
+Modules names as `dotfiles` have a special meaning and are handled like collections
 and are cloned directly as `~/.dotfiles`. After cloning, you can check the current
 dotfiles revision using
 
     metadot version
 
-Third-party bundles will hardly suit your needs, so you can fetch individual
+Third-party collections will hardly suit your needs, so you can fetch individual
 modules:
 
     metadot clone https://git.fluxo.info/rhatto/dotfiles/vim
@@ -51,8 +54,8 @@ Or even start your own:
 
 In both cases your `vim` module will be available at `~/.dotfiles/modules/vim`.
 
-You can use just one bundle at a time. While you can mixed a bundle with
-individual modules, it's more sane to just start your own bundle and keep
+You can use just one collection at a time. While you can mixed a collection with
+individual modules, it's more sane to just start your own collection and keep
 modules as git submodules or subtrees.
 
 Usage
@@ -70,7 +73,7 @@ Load all modules:
 
     metadot load --all
 
-Update a module bundle or all individual modules:
+Update a module collection or all individual modules:
 
     metadot update
 
