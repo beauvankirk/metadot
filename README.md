@@ -78,6 +78,24 @@ Load all modules:
 
 Backups are made whenever a module is loaded.
 
+Updating
+--------
+
+You can fetch updates in a module collection repository using
+
+    metadot fetch
+
+This commands don't automatically update your working copy. Instead, it just
+does a git fetch in the `remotes/origin` repository and display it's last
+commit log including git signature.
+
+You can check version differences using `metadot version` and also standard
+git commands such as `git-log(1)`. Once you're satisfied and want to apply
+changes to the current working copy including updating and initializing
+submodules, type
+
+    metadot merge
+
 Layout
 ------
 
