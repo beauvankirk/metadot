@@ -61,6 +61,9 @@ modules as git submodules or subtrees.
 Usage
 -----
 
+The full list of commands is available with `metadot usage`. You'll probably want
+to start with the following.
+
 List existing modules:
 
     metadot ls
