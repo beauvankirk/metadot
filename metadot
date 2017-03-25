@@ -344,4 +344,10 @@ elif [ "$OPT" == "deps-bundle" ]; then
   metadot_deps_bundle $*
 elif [ "$OPT" == "installed" ]; then
   metadot_installed
+elif [ "$OPT" == "fetch" ]; then
+  metadot_fetch
+elif [ "$OPT" == "merge" ]; then
+  metadot_merge
+else
+  metadot_usage
 fi
