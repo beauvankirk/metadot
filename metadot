@@ -152,7 +152,7 @@ function metadot_create {
 # Fetch dotfiles
 function metadot_fetch {
   if [ -d "$DOT/.git" ]; then
-    ( cd $DOT && $GIT fetch --all && $GIT log --show-signature -n 1 --branches=origin/master )
+    ( cd $DOT && $GIT fetch --all && $GIT log --show-signature -n 1 --remotes --branches=origin/master )
   fi
 }
 
@@ -164,15 +164,17 @@ function metadot_merge {
 }
 
 # Update your dotfiles
-#function metadot_update {
-#  if [ -d "$DOT/.git" ]; then
-#    ( cd $DOT && git pull origin master && git submodule update --init --recursive )
-#  else
-#    for module in `ls $MODULES`; do
-#      ( cd $MODULES/$module && git pull origin master && git submodule update --init --recursive )
-#    done
-#  fi
-#}
+function metadot_update {
+  echo "please run 'metadot fetch && metadot merge' instead"
+  exit 1
+  #if [ -d "$DOT/.git" ]; then
+  #  ( cd $DOT && git pull origin master && git submodule update --init --recursive )
+  #else
+  #  for module in `ls $MODULES`; do
+  #    ( cd $MODULES/$module && git pull origin master && git submodule update --init --recursive )
+  #  done
+  #fi
+}
 
 # Basic usage
 function metadot_usage {
@@ -298,7 +300,7 @@ function metadot_version {
   echo "origin/master branch:"
   echo "====================="
   echo ""
-  ( cd $DOT && $GIT log --show-signature -n 1 --branches=origin/master )
+  ( cd $DOT && $GIT log --show-signature -n 1 --remotes --branches=origin/master )
 }
 
 # Load a bundle
@@ -323,8 +325,8 @@ elif [ "$OPT" == "ls-bundle" ]; then
   metadot_ls_bundle $*
 elif [ "$OPT" == "version" ]; then
   metadot_version
-#elif [ "$OPT" == "update" ]; then
-#  metadot_update
+elif [ "$OPT" == "update" ]; then
+  metadot_update
 elif [ "$OPT" == "backup" ]; then
   shift
   metadot_backup $*
