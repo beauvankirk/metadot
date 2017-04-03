@@ -323,8 +323,8 @@ elif [ "$OPT" == "ls-bundle" ]; then
   metadot_ls_bundle $*
 elif [ "$OPT" == "version" ]; then
   metadot_version
-elif [ "$OPT" == "update" ]; then
-  metadot_update
+#elif [ "$OPT" == "update" ]; then
+#  metadot_update
 elif [ "$OPT" == "backup" ]; then
   shift
   metadot_backup $*
