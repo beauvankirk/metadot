@@ -126,11 +126,21 @@ Also,
 See also
 --------
 
+Implementations:
+
 * http://dotshare.it
 * http://dotfiles.org
 * https://dotfiles.github.io
+* https://bitbucket.org/davidn/dotstuff
+* https://github.com/staticshock/seashell
 * https://wiki.archlinux.org/index.php/Dotfiles
 * http://www.madewithtea.com/dotfiles-are-your-digital-backpack.html
+* http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
+* https://taihen.org/managing-dotfiles-with-gnu-stow/
+
+Configurations:
+
+* https://github.com/xero/dotfiles
 
 Contact
 -------
