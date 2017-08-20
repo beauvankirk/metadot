@@ -159,7 +159,11 @@ function metadot_fetch {
 # Merge
 function metadot_merge {
   if [ -d "$DOT/.git" ]; then
-    ( cd $DOT && $GIT merge origin/master && $GIT submodule update --init --recursive )
+    (
+    cd $DOT && $GIT merge origin/master                 && \\
+               $GIT submodule sync          --recursive && \\
+               $GIT submodule update --init --recursive
+    )
   fi
 }
 
