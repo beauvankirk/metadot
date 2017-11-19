@@ -107,13 +107,22 @@ function metadot_deps {
   local module="$1"
   local destname
   local dirname
+  local deps_to_install
 
   if [ -d "$MODULES/$module" ]; then
     echo "Resolving dependencies for $module.."
 
     if [ -e "/etc/debian_version" ] && [ -e "$MODULES/$module/dependencies/debian" ]; then
       deps="`grep -v '^#' $MODULES/$module/dependencies/debian | xargs`"
-      LC_ALL=C DEBIAN_FRONTEND=noninteractive sudo apt-get install -y $deps
+
+      # Remove installed packages from list
+      for dep in $deps; do
+        if ! dpkg-query -W -f='${Status}' $dep | grep -q '^install ok'; then
+          deps_to_install="$deps_to_install $dep"
+        fi
+      done
+
+      LC_ALL=C DEBIAN_FRONTEND=noninteractive sudo apt-get install -y $deps_to_install
     fi
 
   else
