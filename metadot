@@ -326,6 +326,11 @@ function metadot_deps_bundle {
   __metadot_process_bundle $*
 }
 
+# Repository status
+function metadot_status {
+  ( cd $DOT && git status --ignored && git submodule foreach --recursive git status --ignored )
+}
+
 # Parsing
 if [ -z "$OPT" ]; then
   metadot_usage
@@ -363,6 +368,8 @@ elif [ "$OPT" == "fetch" ]; then
   metadot_fetch
 elif [ "$OPT" == "merge" ]; then
   metadot_merge
+elif [ "$OPT" == "status" ]; then
+  metadot_status
 else
   metadot_usage
 fi
