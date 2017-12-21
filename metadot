@@ -153,7 +153,9 @@ function metadot_create {
     echo "# Comment that while in development."                          >> .gitignore
     echo '*'                                                             >> .gitignore
 
-    git add .
+    cp $DIRNAME/LICENSE .
+
+    git add -f .
   )
   echo "Metadot skeleton module $1 created at $MODULES/$1"
 }
