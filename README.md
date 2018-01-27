@@ -12,7 +12,8 @@ It was inspired by [holman does dotfiles](https://github.com/holman/dotfiles)
 and many other initiatives but with a modular design to ease dotfile sharing as
 the `metadot` code is split from the dotfiles' folder.
 
-Another approach is to [use GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html).
+Another approach is to [use GNU Stow to manage your
+dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html).
 
 Instalation
 -----------
@@ -133,6 +134,7 @@ Implementations:
 * https://dotfiles.github.io
 * https://bitbucket.org/davidn/dotstuff
 * https://github.com/staticshock/seashell
+* https://github.com/robbyrussell/oh-my-zsh
 * https://wiki.archlinux.org/index.php/Dotfiles
 * http://www.madewithtea.com/dotfiles-are-your-digital-backpack.html
 * http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
