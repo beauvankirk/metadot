@@ -173,7 +173,7 @@ function metadot_merge {
     (
     cd $DOT && $GIT merge origin/master                 && \
                $GIT submodule sync          --recursive && \
-               $GIT submodule update --init --recursive
+               $GIT submodule update --init --recursive #--recommend-shallow
     )
   fi
 }
